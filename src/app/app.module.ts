@@ -18,6 +18,7 @@ import { HagDistComponent } from './hag-dist/hag-dist.component';
 import { BeneficioService } from './beneficio.service';
 import { NavBackendComponent } from './nav-backend/nav-backend.component';
 import { AdminComponent } from './admin/admin.component';
+import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AdminComponent } from './admin/admin.component';
     ProductosComponent,
     HagDistComponent,
     NavBackendComponent,
-    AdminComponent
+    AdminComponent,
+    CaracteristicasComponent
   ],
   imports: [
     BsDropdownModule.forRoot(),

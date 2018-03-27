@@ -11,6 +11,7 @@ import { ComoLlegarComponent } from '../como-llegar/como-llegar.component';
 import { ContactoComponent } from '../contacto/contacto.component';
 import { HagDistComponent } from '../hag-dist/hag-dist.component';
 import { AdminComponent } from '../admin/admin.component';
+import { CaracteristicasComponent } from '../caracteristicas/caracteristicas.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'como-llegar', component: ComoLlegarComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'hag-dist', component: HagDistComponent },
-  { path: 'beneficio/:id', component: BeneficiosComponent }
+  { path: 'beneficio/:id', component: BeneficiosComponent },
+  { path: 'caracteristicas', component: CaracteristicasComponent }
 ];
 
 @NgModule({
