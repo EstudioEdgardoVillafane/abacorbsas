@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }    from '@angular/forms';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule }    from '@angular/common/http';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
@@ -18,7 +21,8 @@ import { HagDistComponent } from './hag-dist/hag-dist.component';
 import { BeneficioService } from './beneficio.service';
 import { NavBackendComponent } from './nav-backend/nav-backend.component';
 import { AdminComponent } from './admin/admin.component';
-
+import { BackendUsuariosComponent } from './backend-usuarios/backend-usuarios.component';
+import { BackendUsuarioService } from './backend-usuario.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,15 +37,18 @@ import { AdminComponent } from './admin/admin.component';
     ProductosComponent,
     HagDistComponent,
     NavBackendComponent,
-    AdminComponent
+    AdminComponent,
+    BackendUsuariosComponent
   ],
   imports: [
     BsDropdownModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [ BeneficioService ],
+  providers: [ BeneficioService,BackendUsuarioService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
