@@ -26,6 +26,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule }    from '@angular/common/http';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     HagDistComponent,
     NavBackendComponent,
     AdminComponent,
-    ContentComponent
+    ContentComponent,
+    CaracteristicasComponent
   ],
   imports: [
     HttpModule,
