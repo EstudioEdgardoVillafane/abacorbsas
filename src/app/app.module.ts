@@ -18,6 +18,14 @@ import { HagDistComponent } from './hag-dist/hag-dist.component';
 import { BeneficioService } from './beneficio.service';
 import { NavBackendComponent } from './nav-backend/nav-backend.component';
 import { AdminComponent } from './admin/admin.component';
+import { ContentComponent } from './content/content.component';
+
+import { ContentService } from './content.service';
+
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule }    from '@angular/common/http';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -33,15 +41,19 @@ import { AdminComponent } from './admin/admin.component';
     ProductosComponent,
     HagDistComponent,
     NavBackendComponent,
-    AdminComponent
+    AdminComponent,
+    ContentComponent
   ],
   imports: [
+    HttpModule,
+    HttpClientModule,
     BsDropdownModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    EditorModule
   ],
-  providers: [ BeneficioService ],
+  providers: [ BeneficioService, ContentService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

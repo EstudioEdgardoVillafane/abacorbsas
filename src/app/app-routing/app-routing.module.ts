@@ -11,9 +11,10 @@ import { ComoLlegarComponent } from '../como-llegar/como-llegar.component';
 import { ContactoComponent } from '../contacto/contacto.component';
 import { HagDistComponent } from '../hag-dist/hag-dist.component';
 import { AdminComponent } from '../admin/admin.component';
-
+import { ContentComponent } from '../content/content.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'contenido', component: ContentComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'home', component: HomeComponent },
   { path: 'productos', component: ProductosComponent },
