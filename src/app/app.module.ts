@@ -23,6 +23,15 @@ import { NavBackendComponent } from './nav-backend/nav-backend.component';
 import { AdminComponent } from './admin/admin.component';
 import { BackendUsuariosComponent } from './backend-usuarios/backend-usuarios.component';
 import { BackendUsuarioService } from './backend-usuario.service';
+import { ContentComponent } from './content/content.component';
+import { ContentService } from './content.service';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule }    from '@angular/common/http';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +47,13 @@ import { BackendUsuarioService } from './backend-usuario.service';
     HagDistComponent,
     NavBackendComponent,
     AdminComponent,
-    BackendUsuariosComponent
+    BackendUsuariosComponent,
+    ContentComponent,
+    CaracteristicasComponent
   ],
   imports: [
+    HttpModule,
+    HttpClientModule,
     BsDropdownModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
@@ -48,7 +61,7 @@ import { BackendUsuarioService } from './backend-usuario.service';
     HttpModule,
     HttpClientModule
   ],
-  providers: [ BeneficioService,BackendUsuarioService ],
+  providers: [ BeneficioService,BackendUsuarioService,ContentService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
