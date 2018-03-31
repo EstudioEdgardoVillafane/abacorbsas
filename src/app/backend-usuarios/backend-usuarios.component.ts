@@ -58,7 +58,8 @@ export class BackendUsuariosComponent implements OnInit {
     this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
     .subscribe((data)=>{ this.var=data;});
     
-    this.Listar();
+    // this.Listar();
+    location.reload();
   }
 
   Check(u_id : number){
@@ -95,6 +96,8 @@ export class BackendUsuariosComponent implements OnInit {
           this.var = data;
         });
       }
+      location.reload();
+
   }
     this.Listar();
   }
@@ -120,7 +123,8 @@ export class BackendUsuariosComponent implements OnInit {
       this.u_contrasena.value
     )
     .subscribe((result)=>{this.var=result;});
-    this.Listar();
+    // this.Listar();
+    location.reload();
 
     this.ChangeEditar=true;
   }

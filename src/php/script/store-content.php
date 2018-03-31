@@ -18,8 +18,8 @@ $NewConnect = new Abacor();
 	$ext=explode('/',$tipo);
 	$aleatorio=rand(0,999999999);
 	$nuevo_nombre="port-".$aleatorio.'.'.$ext[1];
-	$ruta="../../img/uploads";
-	$URL = "img/uploads/".$nuevo_nombre;
+	$ruta="../../uploads";
+	$URL = "uploads/".$nuevo_nombre;
 	if($tamano){
 		if($tipo == "image/pjpeg" || $tipo == "image/jpeg"){
 			$nueva_img = imagecreatefromjpeg($tmp);

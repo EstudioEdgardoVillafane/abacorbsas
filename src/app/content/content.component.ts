@@ -51,7 +51,7 @@ export class ContentComponent implements OnInit {
       console.log(data);
       this.Aux = data;
     });
-    // location.reload();
+    location.reload();
   }
 
   ShowAdd(){

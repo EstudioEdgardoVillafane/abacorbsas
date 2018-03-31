@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'hag-dist', component: HagDistComponent },
   { path: 'beneficio/:id', component: BeneficiosComponent },
-  { path: 'caracteristicas', component: CaracteristicasComponent }
+  { path: 'uso', component: CaracteristicasComponent }
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@
               <div class="row p-0 d-flex justify-content-center">
                 <div id="producto" *ngFor="let producto of productos" [class.selected]="producto === selectedProduct" (click)="onSelect(_prod)" class="col-md-2 d-flex justify-items-center bg-white mx-3 mb-3 px-4">
                   <a class="btn btn-block" [routerLink]="['/detalle-productos',producto.id]">
-                    <img src="{{producto.imagen}}" class="img-fluid mx-auto" alt="">
+                    <img src=".{{producto.imagen}}" class="img-fluid mx-auto" alt="">
                     <p class="mx-auto text-center text-dark title-name mt-3">{{producto.nombre}}</p>
                       <button class="btn btn-color text-white btn-block rounded-0 mt-4 mx-auto butt-prod px-md-2">Ver producto</button>
                   </a>
@@ -22,7 +22,7 @@
           </section>
       <div class="col-md-6 d-flex">
         <div class="mx-auto d-flex">
-          <img src="{{prodSelected.imagen}}" class="img-fluid align-self-end " alt="">
+          <!-- <img src="{{prodSelected.imagen}}" class="img-fluid align-self-end " alt=""> -->
         </div>
       </div>
     </div>

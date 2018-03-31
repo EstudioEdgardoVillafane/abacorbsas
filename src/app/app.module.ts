@@ -25,11 +25,10 @@ import { BackendUsuariosComponent } from './backend-usuarios/backend-usuarios.co
 import { BackendUsuarioService } from './backend-usuario.service';
 import { ContentComponent } from './content/content.component';
 import { ContentService } from './content.service';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule }    from '@angular/common/http';
+
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
+import { ItemUsoComponent } from './item-uso/item-uso.component';
 
 
 @NgModule({
@@ -49,7 +48,8 @@ import { CaracteristicasComponent } from './caracteristicas/caracteristicas.comp
     AdminComponent,
     BackendUsuariosComponent,
     ContentComponent,
-    CaracteristicasComponent
+    CaracteristicasComponent,
+    ItemUsoComponent
   ],
   imports: [
     HttpModule,
