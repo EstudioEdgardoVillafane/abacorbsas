@@ -14,7 +14,7 @@ import { AdminComponent } from '../admin/admin.component';
 import { BackendUsuariosComponent } from '../backend-usuarios/backend-usuarios.component'
 import { ContentComponent } from '../content/content.component';
 import { CaracteristicasComponent } from '../caracteristicas/caracteristicas.component';
-
+import { ItemUsoComponent } from '../item-uso/item-uso.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'contenido', component: ContentComponent },
@@ -29,7 +29,8 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'hag-dist', component: HagDistComponent },
   { path: 'beneficio/:id', component: BeneficiosComponent },
-  { path: 'uso', component: CaracteristicasComponent }
+  { path: 'uso', component: CaracteristicasComponent },
+  { path: 'uso/:nombre', component: ItemUsoComponent }
 ];
 
 @NgModule({
