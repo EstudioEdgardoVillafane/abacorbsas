@@ -9,6 +9,7 @@
         <section id="productos ">
             <h1 class="h1 font-weight-bold text-center text-dark mb-4">Nuestros productos</h1>
             <div class="container-fluid">
+
                 <div class="row p-0 d-flex justify-content-center">
                       <div id="producto" *ngFor="let producto of productos" [class.selected]="producto === selectedProduct" (click)="onSelect(_prod)"
                         class="col-md-2 d-flex bg-white mx-4 mb-3 p-0">
@@ -19,11 +20,13 @@
                         </div>
                       </div>
                     </div>
+
               </div>
           </section>
       <div class="col-md-6 d-flex">
         <div class="mx-auto d-flex">
           <img src="{{prodSelected.imagen}}" class=" align-self-end " alt="">
+
         </div>
       </div>
     </div>
