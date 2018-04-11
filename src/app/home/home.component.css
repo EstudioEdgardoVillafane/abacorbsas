@@ -14,7 +14,7 @@ section{
 
 .filter {
     -webkit-backdrop-filter: blur(10px); /* Safari 9+ */
-    backdrop-filter: blur(10px); /* Chrome and Opera */
+
     background-color: rgba(255, 255, 255, 0.3);
 }
 .title-large{
@@ -34,10 +34,10 @@ section{
 }
 #logo img {
      width: 80%;
-     drop-shadow:8px 8px 3px rgba(68, 209, 13, 0.5);
+   
 }
 #productos img{
-    drop-shadow:(8px 8px 3px rgba(0,0,0,.5));
+    
     height: 194px;
 }
 
@@ -67,14 +67,8 @@ section{
        font-size: 2rem;
     }
 }
-@media screen and (max-width:768px) {
-    .title-name{
-        font-size: .7rem!important;
-        overflow-wrap: break-word;
-     }
-    .btn{
-        font-size: .4rem!important;
-        word-wrap: break-word!important;
-     }
+#producto img{
+    cursor: pointer;
 }
+
 
