@@ -7,22 +7,23 @@
   <div class="padding-main py-4 px-3">
     <div class="row d-flex">
         <section id="productos ">
-            <h1 class="h1 font-weight-bold text-center text-dark mb-3">Nuestros productos</h1>
+            <h1 class="h1 font-weight-bold text-center text-dark mb-4">Nuestros productos</h1>
             <div class="container-fluid">
-              <div class="row p-0 d-flex justify-content-center">
-                <div id="producto" *ngFor="let producto of productos" [class.selected]="producto === selectedProduct" (click)="onSelect(_prod)" class="col-md-2 d-flex justify-items-center bg-white mx-3 mb-3 px-4">
-                  <a class="btn btn-block" [routerLink]="['/detalle-productos',producto.id]">
-                    <img src="{{producto.imagen}}" class="img-fluid mx-auto" alt="">
-                    <p class="mx-auto text-center text-dark title-name mt-3">{{producto.nombre}}</p>
-                      <button class="btn btn-color text-white btn-block rounded-0 mt-4 mx-auto butt-prod px-md-2">Ver producto</button>
-                  </a>
-                </div>
+                <div class="row p-0 d-flex justify-content-center">
+                      <div id="producto" *ngFor="let producto of productos" [class.selected]="producto === selectedProduct" (click)="onSelect(_prod)"
+                        class="col-md-2 d-flex bg-white mx-4 mb-3 p-0">
+                        <div class="flex-row mx-auto" [routerLink]="['/detalle-productos',producto.id]">
+                          <img src="{{producto.imagen}}" class="img-fluid" alt="">
+                          <p class="mx-auto text-center text-dark title-name mt-3">{{producto.nombre}}</p>
+                          <button class="btn btn-color btn-block rounded-0 text-white butt-prod px-md-2 d-block mt-auto">Ver producto</button>
+                        </div>
+                      </div>
+                    </div>
               </div>
-            </div>
           </section>
       <div class="col-md-6 d-flex">
         <div class="mx-auto d-flex">
-          <img src="{{prodSelected.imagen}}" class="img-fluid align-self-end " alt="">
+          <img src="{{prodSelected.imagen}}" class=" align-self-end " alt="">
         </div>
       </div>
     </div>

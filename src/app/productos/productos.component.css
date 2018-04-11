@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 .bg-color{
     background: #f3f3f3;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Oxygen', sans-serif;
 }
 .img-fondo{
     min-height: 100px;
@@ -32,24 +32,32 @@ hr{
 .btn-color{
     background-color: #659b01;
 }
-@media screen and (max-width:425px) {
+ 
+/* Móviles */
+/* @media screen and (max-width:425px) {
     .padding-main{
      padding: 30px 15px;
  }
+ .img-prod{
+    max-width: 50%;
+}
+#producto p{
+    word-break: break-all; 
+}
 
  }
 
  @media screen and (max-width:768px) {
     .title-name{
         font-size: .7rem!important;
-        overflow-wrap: break-word;
+        word-break: break-all; 
      }
     .btn{
         font-size: .4rem!important;
         word-wrap: break-word!important;
      }
 }
- 
+  */
 
  
 
