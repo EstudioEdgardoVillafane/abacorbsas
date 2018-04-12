@@ -40,9 +40,10 @@ export class ContentComponent implements OnInit {
   parrafo;
   subtitulo;
   ListEdit;
-  list;
+  List;
   formElement;
   request;
+  idproducto;
 
   BooleanAdd = true;
   Booleano = true;
@@ -62,6 +63,7 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
     this.ListContent();
    
+    this.Listarproductos();
   }
 
 
@@ -72,14 +74,15 @@ export class ContentComponent implements OnInit {
     this.titulo = document.getElementById("titulo-ed");
     this.subtitulo = document.getElementById("subtitulo-ed");
     this.parrafo = document.getElementById("parrafo-ed");
-
+    this.idproducto = document.getElementById("idproducto");
     this.contentService.CrudFunction(
     4,
     id,
     this.titulo.value,
     this.subtitulo.value,
-    this.parrafo.value,
-    '0'
+    this.parrafo.value,  
+   '0',
+   this.idproducto.value
    )
     .subscribe((data) => { 
       console.log(data);
@@ -138,12 +141,22 @@ export class ContentComponent implements OnInit {
   }
   /** This fucntion is calling the database to do a list. CrudFunction is a function of service. He gets 6 parameter. */
   ListContent(){
-   this.contentService.CrudFunction(1,0,'','','','')
+   this.contentService.CrudFunction(1,0,'','','','','')
     .map((response) => response.json())
     .subscribe((data) => { 
       this.ListOfContent = data;
     });
   }
+
+  Listarproductos(){
+    this.contentService.listProduct()
+     .map((response) => response.json())
+     .subscribe((data) => { 
+       this.List = data;
+     });
+   }
+
+
   /** When we do a click on a checkbox, we add it in an array and after is delete. */
   onCheck(id : number){  
     this.Booleano=true;    
@@ -170,7 +183,7 @@ export class ContentComponent implements OnInit {
         if(this.CheckAcumulador[this.i] == undefined){
           console.log("Indefinido");
         }else{
-          this.contentService.CrudFunction(2, this.CheckAcumulador[this.i],"","","","")
+          this.contentService.CrudFunction(2, this.CheckAcumulador[this.i],"","","","","")
           .subscribe((data) => { 
             this.Aux = data;
           });

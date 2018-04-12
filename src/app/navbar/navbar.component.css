@@ -8,6 +8,7 @@ nav .navbar-nav li{
     font-weight: 400;
     border:1px solid transparent!important;
     transition: border .18s ease-in-out;
+    cursor: pointer;
 }
 nav .navbar-nav li:hover{
    border:1px solid rgba(112, 112, 112, 0.294)!important;

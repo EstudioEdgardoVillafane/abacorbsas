@@ -9,47 +9,42 @@ section{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    
 }
 
 .filter {
     -webkit-backdrop-filter: blur(10px); /* Safari 9+ */
-    backdrop-filter: blur(10px); /* Chrome and Opera */
+
     background-color: rgba(255, 255, 255, 0.3);
 }
 .title-large{
-        font-size: 50px;
+        font-size: 3rem;
         line-height: 1.2;
         font-weight: 700;
         
 }
-.title-small{
-    font-size: 24px;
+.title-form{
+    font-size: 1rem;
     font-weight: 700;
 }
 .title-mini{
-    font-size: 18px;
+    font-size: 1.5rem;
     margin-bottom: 40px;
     font-weight: 300;
 }
 #logo img {
      width: 80%;
-     drop-shadow:8px 8px 3px rgba(68, 209, 13, 0.5);
-}
-#productos img{
-    drop-shadow:(8px 8px 3px rgba(0,0,0,.5));
-    height: 194px;
+   
 }
 
 .formulario .form-title{
     color:#2d3345!important;
    }
 
-
-
 #productos{
-    padding: 20px 0;
     background-color: #f9f9f9;
+   
+}
+#producto{
    
 }
 #productos h1,h3{
@@ -62,19 +57,18 @@ section{
 .btn-color{
     background-color: #659b01;
 }
+
+#producto img{
+    cursor: pointer;
+}
 @media screen and (max-width:425px) {
     form h2 {
        font-size: 2rem;
     }
 }
-@media screen and (max-width:768px) {
-    .title-name{
-        font-size: .7rem!important;
-        overflow-wrap: break-word;
-     }
-    .btn{
-        font-size: .4rem!important;
-        word-wrap: break-word!important;
-     }
+@media screen and (max-width:320px) {
+   .title-large {
+       font-size: 2.7rem;
+    }
+    
 }
-

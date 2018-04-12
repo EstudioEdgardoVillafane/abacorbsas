@@ -114,7 +114,6 @@ export class BackendUsuariosComponent implements OnInit {
     this.u_usuario = document.getElementById("u_usuario");
     this.u_mail = document.getElementById("u_mail");
     this.u_contrasena = document.getElementById("u_contrasena");
-
     this.BackendUsuarioService.Conect(
       3,
       0,

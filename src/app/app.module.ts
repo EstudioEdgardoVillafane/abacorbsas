@@ -28,6 +28,7 @@ import { ContentService } from './content.service';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
 import { ItemUsoComponent } from './item-uso/item-uso.component';
+import { AdminService } from './admin.service';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { ItemUsoComponent } from './item-uso/item-uso.component';
     HttpClientModule,
     EditorModule
   ],
-  providers: [ BeneficioService,BackendUsuarioService,ContentService ],
+  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
