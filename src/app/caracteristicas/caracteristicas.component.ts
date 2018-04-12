@@ -18,7 +18,7 @@ export class CaracteristicasComponent implements OnInit {
   ListOfContent;
 
   ngOnInit() {
-    this.contentService.CrudFunction(1,0,'','','','')
+    this.contentService.CrudFunction(1,0,'','','','','')
     .map((response) => response.json())
     .subscribe((data) => { 
       this.ListOfContent = data;

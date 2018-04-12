@@ -19,10 +19,20 @@
 		$sql="UPDATE usuarios SET
         u_usuario = '".$_GET["u_usuario"]."',
         u_mail = '".$_GET["u_mail"]."',
-        u_contrasena = '".$_GET["u_contrasena"]."'
+        u_contrasena = '".md5($_GET["u_contrasena"])."'
          WHERE u_id = '".$_GET["u_id"]."'";
 		$NewConnect->ExecuteSql($sql);
 
-	}
+	}/*elseif($_GET["data"]==5){
+		$sql="SELECT * usuarios where u_usuario='".$_GET["u_usuario"]."' and c_contrasena='".$_GET["u_contrasena"]."'";
+		$NewConnect->ExecuteSql($sql);
+		$resultado=$NewConnect->ExecuteSql($sql);
+		if($resultado->num_rows==0){
+			echo 0;
+		}else{
+			echo 1
+		}
+
+	}*/
 
 ?>

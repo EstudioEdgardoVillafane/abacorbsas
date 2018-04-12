@@ -25,27 +25,30 @@ export class ContentComponent implements OnInit {
   subtitulo;
   BooleanTable = true;
   ListEdit;
-  list;
+  List;
   formElement;
   request;
+  idproducto;
 
   constructor(private contentService: ContentService) {}
 
   ngOnInit() {
     this.ListContent();
+    this.Listarproductos();
   }
   EditReg(id : number){
     this.titulo = document.getElementById("titulo-ed");
     this.subtitulo = document.getElementById("subtitulo-ed");
     this.parrafo = document.getElementById("parrafo-ed");
-
+    this.idproducto = document.getElementById("idproducto");
     this.contentService.CrudFunction(
     4,
     id,
     this.titulo.value,
     this.subtitulo.value,
-    this.parrafo.value,
-    '0'
+    this.parrafo.value,  
+   '0',
+   this.idproducto.value
    )
     .subscribe((data) => { 
       console.log(data);
@@ -72,12 +75,19 @@ export class ContentComponent implements OnInit {
   }
 
   ListContent(){
-   this.contentService.CrudFunction(1,0,'','','','')
+   this.contentService.CrudFunction(1,0,'','','','','')
     .map((response) => response.json())
     .subscribe((data) => { 
       this.ListOfContent = data;
     });
   }
+  Listarproductos(){
+    this.contentService.listProduct()
+     .map((response) => response.json())
+     .subscribe((data) => { 
+       this.List = data;
+     });
+   }
 
   onCheck(id : number){  
     this.Booleano=true;    
@@ -103,7 +113,7 @@ export class ContentComponent implements OnInit {
         if(this.CheckAcumulador[this.i] == undefined){
           console.log("Indefinido");
         }else{
-          this.contentService.CrudFunction(2, this.CheckAcumulador[this.i],"","","","")
+          this.contentService.CrudFunction(2, this.CheckAcumulador[this.i],"","","","","")
           .subscribe((data) => { 
             this.Aux = data;
           });
