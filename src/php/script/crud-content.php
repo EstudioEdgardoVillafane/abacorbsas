@@ -14,7 +14,7 @@
 		$sql="UPDATE uso SET
 		u_titulo = '".$_GET["titulo"]."',
 		u_subtitulo = '".$_GET["subtitulo"]."',
-		u_parrafo = '".$_GET["descripcion"]."'
+		u_parrafo = '".$_GET["descripcion"]."',
 		u_idproducto = '".$_GET["idproducto"]."'
 		WHERE u_id = '".$_GET["id"]."'";
 		$NewConnect->ExecuteSql($sql);
