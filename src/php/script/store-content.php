@@ -7,6 +7,7 @@ $NewConnect = new Abacor();
 	$Titulo = $_POST["titulo"];
 	$Subtitulo = $_POST["subtitulo"];
 	$Parrafo = $_POST["parrafo"];
+	$idproducto=$_POST["producto"];
 	$tipo = $_FILES['uploadedfile']['type'];
 	$tamano = $_FILES['uploadedfile']['size'];
 	$tmp = $_FILES['uploadedfile']['tmp_name'];
@@ -52,8 +53,8 @@ if($tipo == "image/x-png" || $tipo == "image/png"){
 imagedestroy ($img_redimensionada);
 imagedestroy ($nueva_img);
 
-	    $sql = "INSERT INTO uso (u_titulo,u_subtitulo,u_parrafo,u_imagen,u_status) 
-		VALUES ('".$Titulo."','".$Subtitulo."','".$Parrafo."','".$URL."','1')";
-        $NewConnect->ExecuteSql($sql);
+	     $sql = "INSERT INTO uso (u_titulo,u_subtitulo,u_parrafo,u_imagen,u_idproducto,u_status) 
+		VALUES ('".$Titulo."','".$Subtitulo."','".$Parrafo."','".$URL."','".$idproducto."','1')";
+         $NewConnect->ExecuteSql($sql);
 
  ?>

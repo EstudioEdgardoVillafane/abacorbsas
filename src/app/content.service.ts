@@ -12,9 +12,13 @@ export class ContentService {
 
   constructor(private http: Http) { }
 
-  CrudFunction(FunctionPhp: number, id: number, titulo: string, subtitulo: string, descripcion: string, imagen: string){
-    return this.http.get('php/script/crud-content.php?data='+FunctionPhp+'&id='+id+'&titulo='+titulo+'&subtitulo='+subtitulo+'&descripcion='+descripcion+'&imagen='+imagen);
+  CrudFunction(FunctionPhp: number, id: number, titulo: string, subtitulo: string, descripcion: string, imagen: string,idproducto){
+    return this.http.get('php/script/crud-content.php?data='+FunctionPhp+'&id='+id+'&titulo='+titulo+'&subtitulo='+subtitulo+'&descripcion='+descripcion+'&imagen='+imagen+'&idproducto='+idproducto);
   }
+  listProduct(){
+    return this.http.get('php/scripts/list_productos.php');
+  }
+
   getJsonForID(id:number, json){
     return of(json.find((primero => primero.u_id === id)));
   }
