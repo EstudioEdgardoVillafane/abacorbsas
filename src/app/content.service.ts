@@ -22,4 +22,7 @@ export class ContentService {
   getJsonForID(id:number, json){
     return of(json.find((primero => primero.u_id === id)));
   }
+  getJsonForName(name:string, json){
+    return of(json.find((primero => primero.u_titulo === name)));
+  }
 }
