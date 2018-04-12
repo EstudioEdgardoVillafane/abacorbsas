@@ -1,6 +1,7 @@
+
 <app-nav-backend></app-nav-backend>
 <section class="pt-5 pb-5 my-5">
-  <div class="container mt-5">
+  <div class="container-fluid mt-5">
     <div class="row text-center">
       <div class="offset-6 col-6">
       
@@ -51,7 +52,9 @@
           <label>Parrafo</label>
         </div>
         <div class="col-6">
+
           <textarea id="descripcion" value="" placeholder="Texto descriptivo." name="parrafo" class="mt-2 form-control" required></textarea>
+
           <div *ngIf="BooleanToAlertParrafo" class="alert alert-danger">
               <div>
                 * Debe ingresar un parrafo.

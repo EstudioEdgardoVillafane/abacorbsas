@@ -25,7 +25,6 @@ import { BackendUsuariosComponent } from './backend-usuarios/backend-usuarios.co
 import { BackendUsuarioService } from './backend-usuario.service';
 import { ContentComponent } from './content/content.component';
 import { ContentService } from './content.service';
-
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
 import { ItemUsoComponent } from './item-uso/item-uso.component';
@@ -59,7 +58,8 @@ import { ItemUsoComponent } from './item-uso/item-uso.component';
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    EditorModule
   ],
   providers: [ BeneficioService,BackendUsuarioService,ContentService ],
   bootstrap: [AppComponent]

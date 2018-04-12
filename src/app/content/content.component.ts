@@ -5,15 +5,28 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
-import { empty } from 'rxjs/Observer';
-import { isEmpty } from 'rxjs/operators/isEmpty';
+
+    
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
+
+
+
 export class ContentComponent implements OnInit {
   
+
+  // tinymce: any;
+  // ngAfterViewInit() {
+  //   this.tinymce.init({
+  //     selector: 'textarea'
+  //   });
+  // }
+
+
+
   /** This is the declaration of the variables. */
 
   CheckAcumulador = new Array();
@@ -41,12 +54,14 @@ export class ContentComponent implements OnInit {
 
   /** I am defining the service. */
   
-  constructor(private contentService: ContentService) {}
+  constructor(private contentService: ContentService) {
+     }
 
   /** Calling the function ListContent to do the list of content. */
 
   ngOnInit() {
     this.ListContent();
+   
   }
 
 
@@ -187,6 +202,7 @@ export class ContentComponent implements OnInit {
       if(this.titulo.value != "" && this.subtitulo.value != "" && this.parrafo.value !=""){
         this.BooleanToValidate =true;
       }
+      console.log(this.parrafo.value);
       return this.BooleanToValidate;
     }
 
