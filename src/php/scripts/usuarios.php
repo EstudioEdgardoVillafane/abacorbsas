@@ -6,7 +6,10 @@
 	$NewConnect = new Abacor();
 	
 	if($_GET["data"]==1){
-		$sql="SELECT * FROM usuarios WHERE u_status = 1";	
+		$AuxVar;
+		$AuxVar = md5($_GET["u_contrasena"]);
+		$sql="SELECT * FROM usuarios WHERE u_status = 1";
+		$SQL = "SELECT * FROM usuarios WHERE u_status = 1 AND u_usuario = '".$_GET["u_usuario"]."' AND u_contrasena = '".$_GET["u_contrasena"]."'";	
 		$NewConnect->CreateJson($sql);
 	}elseif($_GET["data"]==2){
 		$sqld = "UPDATE usuarios SET u_status = 0 WHERE u_id = '".$_GET["u_id"]."'";
