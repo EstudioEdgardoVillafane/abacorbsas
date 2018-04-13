@@ -19,6 +19,7 @@ import { BeneficioService } from './beneficio.service';
 import { NavBackendComponent } from './nav-backend/nav-backend.component';
 import { AdminComponent } from './admin/admin.component';
 import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
+import { ReplaceLineBreaksPipe } from './replace-line-breaks.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CaracteristicasComponent } from './caracteristicas/caracteristicas.comp
     HagDistComponent,
     NavBackendComponent,
     AdminComponent,
-    CaracteristicasComponent
+    CaracteristicasComponent,
+    ReplaceLineBreaksPipe
   ],
   imports: [
     BsDropdownModule.forRoot(),
