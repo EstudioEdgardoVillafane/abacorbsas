@@ -62,7 +62,6 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.ListContent();
-   
     this.Listarproductos();
   }
 
@@ -138,6 +137,8 @@ export class ContentComponent implements OnInit {
     this.BooleanToAlertTitulo = false;
     this.BooleanToAlertSubTitulo = false;
     this.BooleanToAlertParrafo = false;
+    this.ListContent();
+    this.boolPrueb=false;
   }
   /** This fucntion is calling the database to do a list. CrudFunction is a function of service. He gets 6 parameter. */
   ListContent(){
@@ -159,6 +160,7 @@ export class ContentComponent implements OnInit {
 
   /** When we do a click on a checkbox, we add it in an array and after is delete. */
   onCheck(id : number){  
+    console.log(this.List);
     this.Booleano=true;    
     if(this.NumberAux == 0){
       this.CheckAcumulador[0] = id;
@@ -220,6 +222,7 @@ export class ContentComponent implements OnInit {
     }
 
     /** This function is storing the new regist in a database */
+    boolPrueb = false;
     Store(){
 
       if(this.ValidateForm()){
@@ -228,7 +231,7 @@ export class ContentComponent implements OnInit {
       this.request.open("POST", "php/script/store-content.php");
       console.log(this.request.send(new FormData(this.formElement)));
       this.ListContent();
-      location.reload();
-      }
+      this.boolPrueb = true;
+    }
     }
 }

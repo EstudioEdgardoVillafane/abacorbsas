@@ -43,18 +43,7 @@
   </div>
 
     <!--/ container-fluid-->
-</section>
-<!--/ section home-->
-<section id="productos ">
-    <h1 class="h1 font-weight-bold text-center text-dark my-3">Nuestros productos</h1>
-    <div class="container-fluid">
-      <div class="row p-0 d-flex justify-content-center">
-        <div id="producto" *ngFor="let producto of productos" [class.selected]="producto === selectedProduct" (click)="onSelect(_prod)" class="col-md-2 d-flex justify-items-center bg-white mx-3 mb-3 px-4">
-          <a class="btn btn-block" [routerLink]="['/detalle-productos',producto.id]">
-            <img src=".{{producto.imagen}}" class="img-fluid mx-auto" alt="">
-            <p class="mx-auto text-center text-dark title-name mt-3">{{producto.nombre}}</p>
-              <button class="btn btn-color btn-block rounded-0 text-white mt-4 mx-auto butt-prod px-md-2">Ver producto</button>
-          </a>
+
   <div class="row">
     <div class="col-md-10 mx-auto my-3" id="productos">
       <h1 class="h1 font-weight-bold text-center text-dark mb-3">Nuestros productos</h1>

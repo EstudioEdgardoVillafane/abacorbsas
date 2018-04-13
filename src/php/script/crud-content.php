@@ -19,6 +19,9 @@
 		WHERE u_id = '".$_GET["id"]."'";
 		$NewConnect->ExecuteSql($sql);
 
+	}elseif($_GET["data"]==5){
+		$sql = "SELECT * FROM uso WHERE u_idproducto = '".$_GET["id"]."'";
+		$NewConnect->CreateJson($sql);
 	}
 
 ?>
