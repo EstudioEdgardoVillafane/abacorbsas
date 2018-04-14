@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }    from '@angular/forms';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule }    from '@angular/common/http';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
@@ -18,8 +21,16 @@ import { HagDistComponent } from './hag-dist/hag-dist.component';
 import { BeneficioService } from './beneficio.service';
 import { NavBackendComponent } from './nav-backend/nav-backend.component';
 import { AdminComponent } from './admin/admin.component';
+import { BackendUsuariosComponent } from './backend-usuarios/backend-usuarios.component';
+import { BackendUsuarioService } from './backend-usuario.service';
+import { ContentComponent } from './content/content.component';
+import { ContentService } from './content.service';
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
 import { ReplaceLineBreaksPipe } from './replace-line-breaks.pipe';
+import { ItemUsoComponent } from './item-uso/item-uso.component';
+import { AdminService } from './admin.service';
+
 
 @NgModule({
   declarations: [
@@ -37,15 +48,24 @@ import { ReplaceLineBreaksPipe } from './replace-line-breaks.pipe';
     NavBackendComponent,
     AdminComponent,
     CaracteristicasComponent,
-    ReplaceLineBreaksPipe
+    ReplaceLineBreaksPipe,
+    BackendUsuariosComponent,
+    ContentComponent,
+    CaracteristicasComponent,
+    ItemUsoComponent
   ],
   imports: [
+    HttpModule,
+    HttpClientModule,
     BsDropdownModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    HttpClientModule,
+    EditorModule
   ],
-  providers: [ BeneficioService ],
+  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
