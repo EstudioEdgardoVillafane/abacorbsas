@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   onSelect(prod: Productos): void {
    // alert('hola' + prod.id );
     this.selectedProduct = prod;
+
    }
  
 
