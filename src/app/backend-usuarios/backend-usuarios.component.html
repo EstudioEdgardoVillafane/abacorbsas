@@ -1,50 +1,54 @@
 <section class="pt-5 pb-5 my-5">
 <div class="container mt-5">
 
+<!------------Here begins the form of the Store-------------->
   <ng-template #Agregar>
-    <div *ngIf="ChangeAgregar;else Editar">
+    <div *ngIf="ChangeTemplateAgregar;else Editar">
 
       <div class="container">
         
         <h2 align="center">Agregar Nuevo Usuario</h2>
-        <hr>
+
+  <hr>
       <div class="row mt-2">
         <div class="col-md-6 col-xs-12"><label for="u_usuario">Usuario</label></div>
-        <div class="col-md-6 col-xs-12"><input id="u_usuario" value="" class="form-control" type="text" placeholder="Ingrese un nombre de usuario"></div>
+        <div class="col-md-6 col-xs-12"><input id="u_usuario" value="" class="form-control" type="text" placeholder="Ingrese un nombre de usuario">
+        <div *ngIf="AlertUser" class="alert alert-danger">*Ingrese un nombre de usuario</div></div>
       </div>
 
       <div class="row mt-2">
         <div class="col-md-6 col-xs-12"><label for="u_mail">E-mail</label></div>
-        <div class="col-md-6 col-xs-12"><input id="u_mail" value="" class="form-control" type="text" placeholder="Ingrese un E-mail"></div>
+        <div class="col-md-6 col-xs-12"><input id="u_mail" value="" class="form-control" type="text" placeholder="Ingrese un E-mail">
+        <div *ngIf="AlertMail" class="alert alert-danger">*Ingrese un mail</div></div>
       </div>
   
       <div class="row mt-2">
         <div class="col-md-6 col-xs-12"><label for="u_contrasena">Contraseña</label></div>
-        <div class="col-md-6 col-xs-12"><input id="u_contrasena" type="password" value="" class="form-control" placeholder="Ingrese una contraseña"></div>
+        <div class="col-md-6 col-xs-12"><input id="u_contrasena" type="password" value="" class="form-control" placeholder="Ingrese una contraseña">
+        <div *ngIf="AlertPassword" class="alert alert-danger">*Las contraseñas no coinciden</div></div>     
       </div>
 
       <div class="row mt-2">
-        <div class="col-md-6 col-xs-12"><label for="verificar">Confirmar Contraseña</label></div>
-        <div class="col-md-6 col-xs-12"><input id="verificar" value="" type="password" class="form-control" placeholder="Confirmar Contraseña"></div>
+        <div class="col-md-6 col-xs-12"><label for="ConfirmPassword">Confirmar Contraseña</label></div>
+        <div class="col-md-6 col-xs-12"><input id="ConfirmPassword" value="" type="password" class="form-control" placeholder="Confirmar Contraseña">
+        <div *ngIf="AlertPassword" class="alert alert-danger">*Las contraseñas no coinciden</div></div>     
       </div>
+      
       <div class="row mb-2 text-center">
-          <div class="col-12">
-            <hr>
-          </div>
-          </div>
+        <div class="col-12"><hr></div>
+      </div>
+
       <div class="row mt-2">
         <div class="col-12">
-            <button class="btn btn-lg btn-danger pull-right ml-1" (click)="Return()">Volver</button>
-
-       <button class="btn btn-lg btn-info pull-right" (click)="Alta()">Agregar</button>
+          <button class="btn btn-lg btn-danger pull-right ml-1" (click)="ReturnToTheTableUsers()">Volver</button>
+          <button class="btn btn-lg btn-info pull-right" (click)="Store()">Agregar</button>
+        </div>
       </div>
+
       </div>
-
     </div>
-
-    </div>
-    <!------------------FIN DE AGREGAR-------------------->
-    <!------------------EDITAR---------------------------->
+    <!------------------End form Store-------------------->
+    <!------------------Here begins the form of the Edit---------------------------->
     <ng-template #Editar>
 
       <div class="container">
@@ -52,49 +56,69 @@
         <hr>
       <div class="row mt-2">
         <div class="col-md-6 col-xs-12"><label for="edit_usuario">Editar Usuario</label></div>
-        <div class="col-md-6 col-xs-12"><input id="edit_usuario" value="{{edit_usuarios.u_usuario}}" class="form-control" type="text" placeholder="Ingrese un nombre de usuario"></div>
+        <div class="col-md-6 col-xs-12"><input id="edit_usuario" value="{{edit_usuarios.u_usuario}}" class="form-control" type="text" placeholder="Ingrese un nombre de usuario">
+        <div *ngIf="AlertUser" class="alert alert-danger">*Ingrese el nombre de usuario</div></div>     
       </div>
       
       <div class="row mt-2">
         <div class="col-md-6 col-xs-12"><label for="edit_mail">Editar E-mail</label></div>
-        <div class="col-md-6 col-xs-12"><input id="edit_mail" value="{{edit_usuarios.u_mail}}" class="form-control" type="email" placeholder="Ingrese un E-mail"></div>
+        <div class="col-md-6 col-xs-12"><input id="edit_mail" value="{{edit_usuarios.u_mail}}" class="form-control" type="email" placeholder="Ingrese un E-mail">
+        <div *ngIf="AlertMail" class="alert alert-danger">*Ingresar el Email</div></div> 
       </div>
   
       <div class="row mt-2">
-        <div class="col-md-6 col-xs-12"><label for="edit_contrasena">Editar Contraseña</label></div>
-        <div class="col-md-6 col-xs-12"><input id="edit_contrasena" type="text" value="{{edit_usuarios.u_contrasena}}" class="form-control" placeholder="Ingrese una contraseña"></div>
+        <div class="col-md-6 col-xs-12"><button (click)="EditPassword()">Cambiar contraseña</button></div>
+      </div>
+
+      <div *ngIf="EditPasswordVar">
+
+        <div class="row mt-2">
+          <div class="col-md-6 col-xs-12"><label for="NewPassword">Nueva Contraseña</label></div>
+          <div class="col-md-6 col-xs-12"><input id="NewPassword" type="password" value="" class="form-control" placeholder="Ingrese una contraseña">
+            <div *ngIf="AlertNewPassword" class="alert alert-danger">*Las contraseñas no coinciden</div></div>
+        </div>                      
+        
+      <div class="row mt-2">
+        <div class="col-md-6 col-xs-12"><label for="ConfirmNewPassword">Confirmar Contraseña</label></div>
+        <div class="col-md-6 col-xs-12"><input id="ConfirmNewPassword" value="" type="password" class="form-control" placeholder="Confirmar Contraseña">
+        <div *ngIf="AlertNewPassword" class="alert alert-danger">*Las contraseñas no coinciden</div></div>        
       </div>
 
       <div class="row mt-2">
-        <div class="col-md-6 col-xs-12"><label for="edit_verificar">Confirmar Contraseña</label></div>
-        <div class="col-md-6 col-xs-12"><input id="edit_verificar" value="{{edit_usuarios.u_contrasena}}" type="password" class="form-control" placeholder="Confirmar Contraseña"></div>
+          <div class="col-md-6 col-xs-12"><label for="Password">Contraseña Actual</label></div>
+          <div class="col-md-6 col-xs-12"><input id="Password" value="" type="password" class="form-control" placeholder="Contraseña Actual">
+          <div *ngIf="AlertPassword" class="alert alert-danger">*Ingrese su actual contraseña</div></div>
       </div>
+
+      </div>
+
       <div class="row mb-2 text-center">
           <div class="col-12">
             <hr>
           </div>
           </div>
-      <div class="row mt-2">
-        <div class="col-12">
-        <button class="btn btn-lg btn-danger ml-2" (click)="Return()">Volver</button>
+          <div class="row mt-2">
+            <div class="col-12">
+              <button class="btn btn-lg btn-danger ml-2" (click)="ReturnToTheTableUsers()">Volver</button>
         <button class="btn btn-lg btn-info ml-3" (click)="Edit(edit_usuarios.u_id)">Editar</button>
       </div>
-    </div>
-    </div>
-
-  </ng-template>
+  </div>
+</div>
+  
 </ng-template>
-<!----------FIN EDITAR---------->
+</ng-template>
+<!----------End Edit Form---------->
 
-<div *ngIf="ChangeEditar;else Agregar" class="mt-4">
+<div *ngIf="ChangeTemplateEditar;else Agregar" class="mt-4">
 
     <div class="row">
       <div class="col-5">
-      <h2>Tabla de usuarios.</h2>
+      <h2>Tabla de usuarios.</h2><button  (click)="ShowEditForm(1)">sddsdsdf</button>
+
     </div>
     <div class="col-7">
-        <button class="btn btn-md btn-info pull-right ml-1" (click)="Show()">Agregar</button>
-        <button class="btn btn-md btn-danger pull-right ml-1" (click)="Eliminar()">Eliminar</button>
+        <button class="btn btn-md btn-info pull-right ml-1" (click)="ShowStoreForm()">Agregar</button>
+        <button class="btn btn-md btn-danger pull-right ml-1" (click)="Delete()">Eliminar</button>
     </div>
       </div>
   
@@ -110,11 +134,11 @@
       </thead>
 
       <tbody>
-          <tr *ngFor="let usuarios of listado"> 
+          <tr *ngFor="let usuarios of Listed"> 
             <td><input type="checkbox" class="tilde" value="{{usuarios.u_id}}" (click)="Check(usuarios.u_id)"></td>
             <td>{{usuarios.u_usuario}}</td>
             <td>{{usuarios.u_mail}}</td>
-            <td><button value="{{usuarios.u_id}}" (click)="EditarForm(usuarios.u_id)"><i class="fa fa-pencil"></i></button></td>
+            <td><button value="{{usuarios.u_id}}" (click)="ShowEditForm(usuarios.u_id)"><i class="fa fa-pencil"></i></button></td>
           </tr>
         </tbody>
       </table>

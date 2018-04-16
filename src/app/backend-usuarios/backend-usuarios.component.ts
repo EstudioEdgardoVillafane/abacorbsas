@@ -12,9 +12,32 @@ import { BackendUsuarioService } from '../backend-usuario.service';
 })
 export class BackendUsuariosComponent implements OnInit {
 
-  ChangeEditar=true;
-  ChangeAgregar=true;
-  listado;
+  //these variables are used to change the back-end user table to the form of editing or the form of store
+  ChangeTemplateEditar=true;
+  ChangeTemplateAgregar=true;
+
+  //these variables are used to take the value of the id of the inputs in the HTML
+  //store
+  u_usuario;
+  u_mail;
+  u_contrasena;
+  ConfirmPassword;
+  //edit
+  ConfirmNewPassword;
+  Password;
+
+
+  Listed;
+//the function of these boleans are for validation alerts
+  AlertUser = false;
+  AlertMail = false;
+  AlertPassword = false;
+  AlertConfirmPassword = false;
+  AlertNewPassword = false;
+
+
+  EditPasswordVar = false;
+  
   var;
   CheckAcumulador = new Array();
   NumberAux=0;
@@ -23,24 +46,37 @@ export class BackendUsuariosComponent implements OnInit {
   Booleano = true;
   edit;
   edit_usuarios;
-  u_usuario;
-  u_mail;
-  u_contrasena;
 
   constructor( private BackendUsuarioService:BackendUsuarioService ) { }
 
   ngOnInit() {
-    this.Listar();
+    this.ListBackendUsers();
   }
 
-  Show(){
-    this.ChangeEditar= false;
+  EditPassword(){
+    this.EditPasswordVar = true;
   }
 
-  Return(){
-    this.ChangeEditar=true;
-    this.ChangeAgregar=true;
+//this function show the Store form 
+  ShowStoreForm(){
+    this.ChangeTemplateEditar= false;
   }
+
+//this funtion show the edit form and send the values of the data base in to the inputs of the forms
+  ShowEditForm(u_id : number){
+    this.ChangeTemplateAgregar=false;
+    this.ChangeTemplateEditar=false;
+    this.BackendUsuarioService.getJsonID(u_id,this.Listed)
+    .subscribe(resultado => this.edit_usuarios = resultado);
+  }
+
+//this funtion returns of the backend users table
+  ReturnToTheTableUsers(){
+    this.ChangeTemplateEditar=true;
+    this.ChangeTemplateAgregar=true;
+    this.EditPasswordVar = false;
+  }
+
 
   Listar(){
     this.BackendUsuarioService.validateUser().subscribe((data) => {
@@ -55,25 +91,75 @@ export class BackendUsuariosComponent implements OnInit {
         });
       // }
      });
-    
   }
 
+//this function take the values of the iputs and send the values of the data base
   Edit(u_id : number){
     this.u_usuario = document.getElementById("edit_usuario");
     this.u_mail = document.getElementById("edit_mail");
-    this.u_contrasena = document.getElementById("edit_contrasena");
-    
-    this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
-    .subscribe((data)=>{
-       this.var=data;
-      });
-    
-    // this.Listar();
-    location.reload();
+    this.u_contrasena = document.getElementById("NewPassword");
+    this.ConfirmNewPassword = document.getElementById("ConfirmNewPassword");
+    this.Password = document.getElementById("Password");
+//when don´t press the button " cambiar contrasena" in the edit form
+    if(this.EditPasswordVar == false ){
+
+      if(this.u_usuario.value == ""){
+        this.AlertUser = true;
+      }else{
+        this.AlertUser = false;
+      }
+
+      if(this.u_mail.value == ""){
+        this.AlertMail = true;
+      }else{
+        this.AlertMail = false;
+      }
+      if(this.u_usuario.value != "" && this.u_mail.value != ""){
+        this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
+        .subscribe((data)=>{ this.var=data;});
+            // this.ListBackendUsers();
+          location.reload();
+      }
+//when press the button " cambiar contrasena" in the edit form
+    }else if(this.EditPasswordVar == true){
+
+      if(this.u_usuario.value == ""){
+        this.AlertUser = true;
+      }else{
+        this.AlertUser = false;
+      }
+
+      if(this.u_mail.value == ""){
+        this.AlertMail = true;
+      }else{
+        this.AlertMail = false;
+      }
+
+      if(this.u_contrasena.value != this.ConfirmNewPassword.value){
+        this.AlertNewPassword = true;
+      }else{
+        this.AlertNewPassword = false;
+      }
+
+      if(this.Password.value == ""){
+        this.AlertPassword = true;
+      }else{
+        this.AlertPassword = false;        
+      }
+
+      if(this.u_usuario.value != "" && this.u_mail.value != "" && this.u_contrasena.value == this.ConfirmNewPassword.value && this.u_contrasena != "" && this.Password.value != ""){
+        this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
+        .subscribe((data)=>{ this.var=data;});
+            // this.ListBackendUsers();
+       location.reload();
+      }
+    }
+
   }
 
+// this function accumulates the checks that are in the table to be deleted later
   Check(u_id : number){
-    this.Booleano=true;    
+     this.Booleano=true;    
     console.log("Contador: " + this.NumberAux);
     if(this.NumberAux == 0){
       this.CheckAcumulador[0] = u_id;
@@ -96,7 +182,8 @@ export class BackendUsuariosComponent implements OnInit {
       }
     }
 
-  Eliminar(){
+// this function delete the backend users of the table that are select whith the chek
+  Delete(){
     for(this.i=0; this.i<this.NumberAux; this.i++){
       if(this.CheckAcumulador[this.i] == undefined){
         console.log("Indefinido");
@@ -109,33 +196,47 @@ export class BackendUsuariosComponent implements OnInit {
       location.reload();
 
   }
-    this.Listar();
+    this.ListBackendUsers();
   }
 
-  EditarForm(u_id : number){
-    this.ChangeAgregar=false;
-    this.ChangeEditar=false;
-    this.BackendUsuarioService.getJsonID(u_id,this.listado)
-    .subscribe(resultado => this.edit_usuarios = resultado);
-
-  }
-
-  Alta(){
+//this function add users in to the data base
+  Store(){
     this.u_usuario = document.getElementById("u_usuario");
     this.u_mail = document.getElementById("u_mail");
     this.u_contrasena = document.getElementById("u_contrasena");
-    this.BackendUsuarioService.Conect(
-      3,
-      0,
-      this.u_usuario.value,
-      this.u_mail.value,
-      this.u_contrasena.value
-    )
-    .subscribe((result)=>{this.var=result;});
-    // this.Listar();
-    location.reload();
+    this.ConfirmPassword = document.getElementById("ConfirmPassword");
+    
+    if(this.u_usuario.value == ""){
+      this.AlertUser = true;
+    }else{
+      this.AlertUser = false;
+    } 
+    if(this.u_mail.value == "" ){
+      this.AlertMail = true;
+    }else{
+      this.AlertMail = false;
+    } 
+    if(this.u_contrasena.value != this.ConfirmPassword.value){
+      this.AlertPassword = true;
+    }else{
+      this.AlertPassword = false;
+    }
+    if(this.u_usuario.value != "" && this.u_mail.value != "" && this.u_contrasena.value == this.ConfirmPassword.value && this.u_contrasena.value != "" && this.ConfirmPassword.value != "" ){
 
-    this.ChangeEditar=true;
-  }
+      this.BackendUsuarioService.Conect(
+        3,
+        0,
+        this.u_usuario.value,
+        this.u_mail.value,
+        this.u_contrasena.value
+      )
+      .subscribe((result)=>{this.var=result;});
+      // this.ListBackendUsers();
+      location.reload();
+      
+      this.ChangeTemplateEditar=true;
+    }
+    }
+    
 
 }
