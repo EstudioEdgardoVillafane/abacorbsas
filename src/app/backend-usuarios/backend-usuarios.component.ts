@@ -47,11 +47,11 @@ export class BackendUsuariosComponent implements OnInit {
   Booleano = true;
   edit;
   edit_usuarios;
-
+  listado;
   constructor( private BackendUsuarioService:BackendUsuarioService ) { }
 
   ngOnInit() {
-    this.ListBackendUsers();
+    this.Listar();
   }
 
   EditPassword(){
@@ -197,7 +197,7 @@ export class BackendUsuariosComponent implements OnInit {
       location.reload();
 
   }
-    this.ListBackendUsers();
+    this.Listar();
   }
 
 //this function add users in to the data base
