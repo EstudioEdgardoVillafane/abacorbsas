@@ -11,7 +11,7 @@ export class DetalleProductosComponent implements OnInit {
   detail_prod: Array<object>;
   prodId:number;
   prodSelected:object;
-  ListOfUsos;
+  ListOfUsos;r
 
   constructor(private ruta:ActivatedRoute, private contentService: ContentService) {
     this.detail_prod = [
