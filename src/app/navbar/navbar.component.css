@@ -1,7 +1,7 @@
 
 nav{
-    background: linear-gradient(135deg, #659b01 0%,hsla(186, 90%, 39%, 1) 20%,#659b01 20%,#659b01 99%);
-    min-height: 80px;
+    background: linear-gradient(135deg, #659b01 0%,hsla(186, 90%, 39%, 1) 21%,#659b01 21%,#659b01 99%);
+    min-height: 94px;
 }
 nav .navbar-nav li{
     font-size: 1.09rem;
@@ -32,14 +32,31 @@ position: absolute;
  top: 2%;
 left: 2%;
 }
+.bsas{
+    font-size: 1rem;
+    text-transform: capitalize;
+}
 
-/* Móvil */
+/* Móvil medium */
 @media screen and (max-width:425px) {
     .navbar-nav li:hover {
         border-color: #fff!important;
     }
-    
+    .navbar button{
+        margin-right:2rem !important;
+    }
 }
+
+/* Móvil xs */
+@media screen and (max-width:320px) {
+    .navbar-nav li:hover {
+        border-color: #fff!important;
+    }
+    .navbar button{
+        margin-right:1rem !important;
+    }
+}
+
 /* Tablet */
 @media screen and (max-width:768px) {
     nav .navbar-nav li a{
@@ -48,5 +65,10 @@ left: 2%;
     nav .navbar-nav .box-phone,i{
         font-size: .8rem;
     }
+    .navbar-dark .navbar-toggler{
+       background-color: slategray!important;
+       border-radius: 0; 
+    }
+    
    
 }

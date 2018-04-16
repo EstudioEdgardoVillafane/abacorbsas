@@ -1,16 +1,16 @@
 <app-navbar ></app-navbar>
-<div class=" bg-light">
+<div class="container-fluid bg-light">
  
-  <div class="py-4 px-3">
+ 
     <div class="row d-flex ">
       <!-- parte izq. -->
-      <div class="col-md-6 mx-auto mt-3 text-grey">
+      <div class="col-md-6 mx-auto mt-3 mb-4 text-grey">
         <h1 class="text-center title-large">{{prodSelected.nombre}}</h1>
         <div class="row">
-          <p class="mx-auto my-4 title-small">{{prodSelected.detalle}}</p>
-            <h4 class="w-100 mb-4">Propiedades</h4>
+          <p class="mx-auto my-4 title-small px-2">{{prodSelected.detalle}}</p>
+            <h4 class="w-100 mb-4 px-2">Propiedades</h4>
             
-            <ul class="icon-list list-group flex-row">
+            <ul class="mx-auto mx-sm-0 icon-list list-group flex-row">
               <li class="list-group-item"><i class="fa fa-cubes fa-5x"></i></li>
               <li class="list-group-item"><i class="fa fa-tint fa-5x"></i></li>
               <li class="list-group-item"><i class="fa fa-home fa-5x"></i></li>
@@ -27,10 +27,10 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-sm btn-dark m-5">
-    <a class="btn text-white" routerLink="/productos">&lt; Volver</a>
+    <button type="button" class="btn btn-sm btn-dark m-5 back">
+    <a class="btn text-white" routerLink="/productos">Volver</a>
   </button>
-  </div>
+ 
   
 </div>
 <app-footer></app-footer>
