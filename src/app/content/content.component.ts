@@ -5,15 +5,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
-import { empty } from 'rxjs/Observer';
-import { isEmpty } from 'rxjs/operators/isEmpty';
+import { BackendUsuarioService } from '../backend-usuario.service'
+    
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
+
+
+
 export class ContentComponent implements OnInit {
-  
+ 
   /** This is the declaration of the variables. */
 
   CheckAcumulador = new Array();
@@ -27,9 +30,10 @@ export class ContentComponent implements OnInit {
   parrafo;
   subtitulo;
   ListEdit;
-  list;
+  List;
   formElement;
   request;
+  idproducto;
 
   BooleanAdd = true;
   Booleano = true;
@@ -41,12 +45,14 @@ export class ContentComponent implements OnInit {
 
   /** I am defining the service. */
   
-  constructor(private contentService: ContentService) {}
+  constructor(private contentService: ContentService, private backendUserService: BackendUsuarioService) {
+     }
 
   /** Calling the function ListContent to do the list of content. */
 
   ngOnInit() {
     this.ListContent();
+    this.Listarproductos();
   }
 
 
@@ -57,14 +63,15 @@ export class ContentComponent implements OnInit {
     this.titulo = document.getElementById("titulo-ed");
     this.subtitulo = document.getElementById("subtitulo-ed");
     this.parrafo = document.getElementById("parrafo-ed");
-
+    this.idproducto = document.getElementById("idproducto");
     this.contentService.CrudFunction(
     4,
     id,
     this.titulo.value,
     this.subtitulo.value,
-    this.parrafo.value,
-    '0'
+    this.parrafo.value,  
+   '0',
+   this.idproducto.value
    )
     .subscribe((data) => { 
       console.log(data);
@@ -120,17 +127,38 @@ export class ContentComponent implements OnInit {
     this.BooleanToAlertTitulo = false;
     this.BooleanToAlertSubTitulo = false;
     this.BooleanToAlertParrafo = false;
+    this.ListContent();
+    this.boolPrueb=false;
   }
   /** This fucntion is calling the database to do a list. CrudFunction is a function of service. He gets 6 parameter. */
   ListContent(){
-   this.contentService.CrudFunction(1,0,'','','','')
-    .map((response) => response.json())
-    .subscribe((data) => { 
-      this.ListOfContent = data;
+    this.backendUserService.validateUser().subscribe((data) => {
+    console.log(data.text());
+    // if(data.text() == ""){
+    //   // location.href="../../admin";
+      
+    // }else{
+      this.contentService.CrudFunction(1,0,'','','','','')
+        .map((response) => response.json())
+        .subscribe((data) => { 
+        this.ListOfContent = data;
+      });
+    // }
     });
   }
+
+  Listarproductos(){
+    this.contentService.listProduct()
+     .map((response) => response.json())
+     .subscribe((data) => { 
+       this.List = data;
+     });
+   }
+
+
   /** When we do a click on a checkbox, we add it in an array and after is delete. */
   onCheck(id : number){  
+    console.log(this.List);
     this.Booleano=true;    
     if(this.NumberAux == 0){
       this.CheckAcumulador[0] = id;
@@ -155,7 +183,7 @@ export class ContentComponent implements OnInit {
         if(this.CheckAcumulador[this.i] == undefined){
           console.log("Indefinido");
         }else{
-          this.contentService.CrudFunction(2, this.CheckAcumulador[this.i],"","","","")
+          this.contentService.CrudFunction(2, this.CheckAcumulador[this.i],"","","","","")
           .subscribe((data) => { 
             this.Aux = data;
           });
@@ -187,10 +215,12 @@ export class ContentComponent implements OnInit {
       if(this.titulo.value != "" && this.subtitulo.value != "" && this.parrafo.value !=""){
         this.BooleanToValidate =true;
       }
+      console.log(this.parrafo.value);
       return this.BooleanToValidate;
     }
 
     /** This function is storing the new regist in a database */
+    boolPrueb = false;
     Store(){
 
       if(this.ValidateForm()){
@@ -199,7 +229,7 @@ export class ContentComponent implements OnInit {
       this.request.open("POST", "php/script/store-content.php");
       console.log(this.request.send(new FormData(this.formElement)));
       this.ListContent();
-      location.reload();
-      }
+      this.boolPrueb = true;
+    }
     }
 }

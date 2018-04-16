@@ -19,7 +19,7 @@ export class ItemUsoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.usoService.CrudFunction(1,0,'','','','')
+    this.usoService.CrudFunction(1,0,'','','','','')
     .map((response) => response.json())
     .subscribe((data) => { 
       this.List = data;

@@ -25,10 +25,12 @@ import { BackendUsuariosComponent } from './backend-usuarios/backend-usuarios.co
 import { BackendUsuarioService } from './backend-usuario.service';
 import { ContentComponent } from './content/content.component';
 import { ContentService } from './content.service';
-
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
+import { ReplaceLineBreaksPipe } from './replace-line-breaks.pipe';
 import { ItemUsoComponent } from './item-uso/item-uso.component';
+import { AdminService } from './admin.service';
+import { BackendCentComponent } from './backend-cent/backend-cent.component';
 
 
 @NgModule({
@@ -46,10 +48,13 @@ import { ItemUsoComponent } from './item-uso/item-uso.component';
     HagDistComponent,
     NavBackendComponent,
     AdminComponent,
+    CaracteristicasComponent,
+    ReplaceLineBreaksPipe,
     BackendUsuariosComponent,
     ContentComponent,
     CaracteristicasComponent,
-    ItemUsoComponent
+    ItemUsoComponent,
+    BackendCentComponent
   ],
   imports: [
     HttpModule,
@@ -59,9 +64,10 @@ import { ItemUsoComponent } from './item-uso/item-uso.component';
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    EditorModule
   ],
-  providers: [ BeneficioService,BackendUsuarioService,ContentService ],
+  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

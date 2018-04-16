@@ -6,6 +6,12 @@ class Abacor{
 		$conex -> Execute($sql);
 		$conex -> CloseConnection();
 	}	  
+	public function Search($sql){
+		$conex = New Connect();
+		$conex -> CreateConnection();
+		return $conex -> Search($sql);
+		$conex -> CloseConnection();
+	}	
 	public function CreateJson($sql){
 		$con = New Connect();
 		$con -> CreateConnection();

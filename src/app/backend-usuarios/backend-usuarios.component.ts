@@ -77,13 +77,20 @@ export class BackendUsuariosComponent implements OnInit {
     this.EditPasswordVar = false;
   }
 
-//this function list the backend users in the   table
-  ListBackendUsers(){
-    this.BackendUsuarioService.Conect(1,0,"0","0","0")
-    .map((response) => response.json())
-    .subscribe((data) => { 
-      this.Listed = data;
-    });
+
+  Listar(){
+    this.BackendUsuarioService.validateUser().subscribe((data) => {
+      console.log(data.text());
+      // if(data.text() == ""){
+        // location.href="../../admin";
+      // }else{
+        this.BackendUsuarioService.Conect(5,0,"0","0","0")
+          .map((response) => response.json())
+          .subscribe((data) => { 
+          this.listado = data;
+        });
+      // }
+     });
   }
 
 //this function take the values of the iputs and send the values of the data base
@@ -152,7 +159,7 @@ export class BackendUsuariosComponent implements OnInit {
 
 // this function accumulates the checks that are in the table to be deleted later
   Check(u_id : number){
-    this.Booleano=true;    
+     this.Booleano=true;    
     console.log("Contador: " + this.NumberAux);
     if(this.NumberAux == 0){
       this.CheckAcumulador[0] = u_id;
@@ -231,4 +238,5 @@ export class BackendUsuariosComponent implements OnInit {
     }
     }
     
+
 }
