@@ -11,7 +11,11 @@ import { ComoLlegarComponent } from '../como-llegar/como-llegar.component';
 import { ContactoComponent } from '../contacto/contacto.component';
 import { HagDistComponent } from '../hag-dist/hag-dist.component';
 import { AdminComponent } from '../admin/admin.component';
+import { BackendUsuariosComponent } from '../backend-usuarios/backend-usuarios.component'
+import { ContentComponent } from '../content/content.component';
 import { CaracteristicasComponent } from '../caracteristicas/caracteristicas.component';
+import { ItemUsoComponent } from '../item-uso/item-uso.component';
+import { BackendCentComponent } from '../backend-cent/backend-cent.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,7 +29,16 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'hag-dist', component: HagDistComponent },
   { path: 'beneficio/:id', component: BeneficiosComponent },
-  { path: 'caracteristicas', component: CaracteristicasComponent }
+  { path: 'uso', component: CaracteristicasComponent },
+  { path: 'uso/:nombre', component: ItemUsoComponent },
+  { path: 'usuariosd', component: BackendUsuariosComponent },
+  { path: 'admin/online',
+    component: BackendCentComponent,
+    children:[
+      { path: 'usos', component: ContentComponent },
+      { path: 'usuarios', component: BackendUsuariosComponent }
+    ]
+  }
 ];
 
 @NgModule({

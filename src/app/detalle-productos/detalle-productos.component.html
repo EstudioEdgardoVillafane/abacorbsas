@@ -15,12 +15,16 @@
               <li class="list-group-item"><i class="fa fa-tint fa-5x"></i></li>
               <li class="list-group-item"><i class="fa fa-home fa-5x"></i></li>
             </ul>
+            <h4 class="w-100 mb-4">Usos del producto</h4>
+            <li class="list-group-item" *ngFor="let listado of ListOfUsos">
+              <a routerLink="/uso/{{listado.u_titulo}}">{{listado.u_titulo}}</a>
+            </li>
         </div>
       </div>
       <!-- parte der. -->
       <div class="col-md-5 d-flex flex-column bg-white">
         <div class="d-flex ">
-          <img src="{{prodSelected.imagen}}" class="img-fluid align-self-start mx-auto" alt="">
+          <img src=".{{prodSelected.imagen}}" class="img-fluid align-self-start mx-auto" alt="">
         </div>
         <div class="bg-warning d-flex mt-3">
           <button type="button" class="btn btn-block btn-lg btn-custom rounded-0 text-white">VER FICHA TÉCNICA</button>

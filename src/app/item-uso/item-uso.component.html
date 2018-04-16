@@ -1,0 +1,39 @@
+<app-navbar ></app-navbar>
+<div class=" bg-light">
+ 
+  <div class="py-4 px-3">
+    <div class="row d-flex ">
+      <!-- parte izq. -->
+      <div class="col-md-6 mx-auto mt-3 text-grey">
+        <h1 class="text-center title-large">{{ListSelect.u_titulo}}</h1>
+        <div class="row">
+          <p class="mx-auto my-4 title-small">{{ListSelect.u_subtitulo}}</p>
+            <h4 class="w-100 mb-4">Información</h4>
+            <p>
+              {{ListSelect.u_parrafo}}
+            </p>
+            <h4 class="w-100 mb-4">
+              Producto
+            </h4>
+            <p>
+              {{ListSelect.p_nombre}}
+            </p>
+        </div>
+      </div>
+      <!-- parte der. -->
+      <div class="col-md-5 d-flex flex-column bg-white">
+        <div class="d-flex ">
+          <img src="{{ListSelect.u_imagen}}" class="img-fluid align-self-start mx-auto" alt="">
+        </div>
+        <div class="bg-warning d-flex mt-3">
+          <button type="button" class="btn btn-block btn-lg btn-custom rounded-0 text-white">Contactar</button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-sm btn-dark m-5">
+    <a class="btn text-white" routerLink="/uso"> Volver a productos</a>
+  </button>
+  </div>
+  
+</div>
+<app-footer></app-footer>
