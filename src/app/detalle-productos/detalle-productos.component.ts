@@ -26,7 +26,6 @@ export class DetalleProductosComponent implements OnInit {
     ]
    }
  
-
   ngOnInit() {
     this.ruta.params.subscribe(params=>{
       this.prodId = params['prodId'];

@@ -15,11 +15,11 @@ import { BackendUsuariosComponent } from '../backend-usuarios/backend-usuarios.c
 import { ContentComponent } from '../content/content.component';
 import { CaracteristicasComponent } from '../caracteristicas/caracteristicas.component';
 import { ItemUsoComponent } from '../item-uso/item-uso.component';
+import { BackendCentComponent } from '../backend-cent/backend-cent.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'contenido', component: ContentComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'usuarios', component: BackendUsuariosComponent },
   { path: 'home', component: HomeComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'detalle-productos/:prodId', component: DetalleProductosComponent },
@@ -30,7 +30,15 @@ const routes: Routes = [
   { path: 'hag-dist', component: HagDistComponent },
   { path: 'beneficio/:id', component: BeneficiosComponent },
   { path: 'uso', component: CaracteristicasComponent },
-  { path: 'uso/:nombre', component: ItemUsoComponent }
+  { path: 'uso/:nombre', component: ItemUsoComponent },
+  { path: 'usuariosd', component: BackendUsuariosComponent },
+  { path: 'admin/online',
+    component: BackendCentComponent,
+    children:[
+      { path: 'usos', component: ContentComponent },
+      { path: 'usuarios', component: BackendUsuariosComponent }
+    ]
+  }
 ];
 
 @NgModule({

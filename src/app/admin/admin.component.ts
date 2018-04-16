@@ -24,36 +24,33 @@ export class AdminComponent implements OnInit {
   usuario;
  contrasena;
   Obj;
- 
+  BooleanAlertLogin = false;
+  Aux : string;
+  AuxFunction(){
+    
+  }
   onClick(){
 
     this.usuario=document.getElementById("usuario");
     this.contrasena= document.getElementById("contrasena");
    
-    this.AdminService.getJsonUSER(this.usuario.value,this.Listado)
-    .subscribe((data) => { 
-      this.userValue = data;
-    });
-    if(this. userValue == undefined){
-      console.log(this.contrasena);
-    }else{
-      if(this.contrasena.value == this.userValue.u_contrasena){
-        this.UserOnline = false;
+    this.AdminService.Conect(1,0,this.usuario.value,this.contrasena.value)
+    .subscribe((data) => {
+      console.log(data.text());
+     if(data.text() == " 0"){
+       console.log("Error");
+       this.BooleanAlertLogin = true;
       }else{
-        console.log(this.contrasena);
+        location.href="admin/online/usos";
       }
-    }
+    });    
+  
   }
 
 
 
-
   ngOnInit() {
-    this.AdminService.Conect(1,0,"0","0")
-    .map((response) => response.json())
-    .subscribe((data) => { 
-      this.Listado = data;
-    });
+   
   }
 
 }

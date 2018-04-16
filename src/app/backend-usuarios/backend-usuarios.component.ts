@@ -43,11 +43,19 @@ export class BackendUsuariosComponent implements OnInit {
   }
 
   Listar(){
-    this.BackendUsuarioService.Conect(1,0,"0","0","0")
-    .map((response) => response.json())
-    .subscribe((data) => { 
-      this.listado = data;
-    });
+    this.BackendUsuarioService.validateUser().subscribe((data) => {
+      console.log(data.text());
+      // if(data.text() == ""){
+        // location.href="../../admin";
+      // }else{
+        this.BackendUsuarioService.Conect(5,0,"0","0","0")
+          .map((response) => response.json())
+          .subscribe((data) => { 
+          this.listado = data;
+        });
+      // }
+     });
+    
   }
 
   Edit(u_id : number){
@@ -56,7 +64,9 @@ export class BackendUsuariosComponent implements OnInit {
     this.u_contrasena = document.getElementById("edit_contrasena");
     
     this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
-    .subscribe((data)=>{ this.var=data;});
+    .subscribe((data)=>{
+       this.var=data;
+      });
     
     // this.Listar();
     location.reload();

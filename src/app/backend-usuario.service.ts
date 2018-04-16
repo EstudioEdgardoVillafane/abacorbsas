@@ -15,6 +15,9 @@ export class BackendUsuarioService {
     return this.Http.get('php/scripts/usuarios.php?data='+func+'&u_id='+u_id+"&u_usuario="+u_usuario+"&u_mail="+u_mail+"&u_contrasena="+u_contrasena);
      //Devuelve el resultado del php como objeto.
   }
+  validateUser(){
+    return this.Http.get('php/scripts/user-validate.php');
+  }
   getJsonID(u_id : number, json){
     return of(json.find(primero => primero.u_id === u_id));
   } 

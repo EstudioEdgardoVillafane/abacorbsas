@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
-
+import { BackendUsuarioService } from '../backend-usuario.service'
     
 @Component({
   selector: 'app-content',
@@ -16,17 +16,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 
 export class ContentComponent implements OnInit {
-  
-
-  // tinymce: any;
-  // ngAfterViewInit() {
-  //   this.tinymce.init({
-  //     selector: 'textarea'
-  //   });
-  // }
-
-
-
+ 
   /** This is the declaration of the variables. */
 
   CheckAcumulador = new Array();
@@ -55,7 +45,7 @@ export class ContentComponent implements OnInit {
 
   /** I am defining the service. */
   
-  constructor(private contentService: ContentService) {
+  constructor(private contentService: ContentService, private backendUserService: BackendUsuarioService) {
      }
 
   /** Calling the function ListContent to do the list of content. */
@@ -142,10 +132,18 @@ export class ContentComponent implements OnInit {
   }
   /** This fucntion is calling the database to do a list. CrudFunction is a function of service. He gets 6 parameter. */
   ListContent(){
-   this.contentService.CrudFunction(1,0,'','','','','')
-    .map((response) => response.json())
-    .subscribe((data) => { 
-      this.ListOfContent = data;
+    this.backendUserService.validateUser().subscribe((data) => {
+    console.log(data.text());
+    // if(data.text() == ""){
+    //   // location.href="../../admin";
+      
+    // }else{
+      this.contentService.CrudFunction(1,0,'','','','','')
+        .map((response) => response.json())
+        .subscribe((data) => { 
+        this.ListOfContent = data;
+      });
+    // }
     });
   }
 

@@ -13,7 +13,7 @@ export class AdminService {
   constructor(private Http : Http) { }
   Conect(Funct: number, u_id : number, u_usuario : string, u_contrasena : string){
     
-    return this.Http.get('http://localhost/abacorbsas/src/php/scripts/usuarios.php?data='+Funct+'&id='+u_id+"&usuario="+u_usuario+"&contrasena="+u_contrasena);
+    return this.Http.get('php/scripts/usuarios.php?data='+Funct+'&u_id='+u_id+"&u_usuario="+u_usuario+"&u_contrasena="+u_contrasena);
      //Devuelve el resultado del php como objeto.
   }
   getJsonID(id : number, json){

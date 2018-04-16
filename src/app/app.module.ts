@@ -30,6 +30,7 @@ import { CaracteristicasComponent } from './caracteristicas/caracteristicas.comp
 import { ReplaceLineBreaksPipe } from './replace-line-breaks.pipe';
 import { ItemUsoComponent } from './item-uso/item-uso.component';
 import { AdminService } from './admin.service';
+import { BackendCentComponent } from './backend-cent/backend-cent.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { AdminService } from './admin.service';
     BackendUsuariosComponent,
     ContentComponent,
     CaracteristicasComponent,
-    ItemUsoComponent
+    ItemUsoComponent,
+    BackendCentComponent
   ],
   imports: [
     HttpModule,
