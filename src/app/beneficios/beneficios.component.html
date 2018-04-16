@@ -1,16 +1,16 @@
 <app-navbar ></app-navbar>
 <div *ngIf="!totodos;else other_content">
 <div class="row p-0 mx-0">
-  <div class="mb-4 px-5">
+  <div class="mb-4 px-0 px-md-3 px-lg-5">
     <div class="w-100 banda-sup">
-      <h1 class="text-center text-dark title-large my-4">Nuestros Beneficios</h1>
-      <h5 class="text-dark my-4"><em> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</em></h5>
-      <p class="col-md-8 pl-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia reprehenderit cum nostrum labore ad ipsum facere
+      <h1 class="text-center text-dark title-large my-4 pl-3">Nuestros Beneficios</h1>
+      <h5 class="text-dark my-4 pl-3"><em> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</em></h5>
+      <p class="col-md-8 pl-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia reprehenderit cum nostrum labore ad ipsum facere
         maiores unde. Voluptatibus ab deserunt inventore blanditiis placeat pariatur facere vel deleniti consectetur dicta.</p>
     </div>
 
     <div class="row p-0 mx-0 d-flex justify-content-center mb-5 beneficios">
-      <div class="col-md-3 d-flex flex-column" *ngFor="let beneficio of beneficios" [class.selected]="beneficio === selectedBenefic"
+      <div class="col-md-3 d-flex flex-column mb-3" *ngFor="let beneficio of beneficios" [class.selected]="beneficio === selectedBenefic"
         >
         <div class=" d-flex ">
           <img src=".{{beneficio.imagen}}" class="img-fluid align-self-start mx-auto" alt="">
@@ -24,7 +24,7 @@
 
   <div class="w-100 mt-4 d-flex bg-cartel justify-content-center">
     <a routerLink="/hag-dist" class="d-flex align-self-center">
-      <h1 class="text-white m-0">SEA DISTRIBUIDOR</h1>
+      <h1 class="text-white m-0 ">SEA DISTRIBUIDOR</h1>
       
     </a>
   </div>

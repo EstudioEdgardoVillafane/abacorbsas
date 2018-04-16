@@ -37,3 +37,6 @@ hr{
     border-color: transparent!important;
    
 }
+.back{
+    cursor: pointer!important;
+}
