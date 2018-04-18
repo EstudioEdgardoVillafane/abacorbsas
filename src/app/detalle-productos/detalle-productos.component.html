@@ -1,40 +1,49 @@
-<app-navbar ></app-navbar>
-<div class="container-fluid bg-light">
- 
- 
-    <div class="row d-flex ">
-      <!-- parte izq. -->
-      <div class="col-md-6 mx-auto mt-3 mb-4 text-grey">
-        <h1 class="text-center title-large">{{prodSelected.nombre}}</h1>
+<app-navbar></app-navbar>
+<div class="container-fluid p-4">
+  <div class="row px-3 main">
+    <!-- parte izq. -->
+    <div class="col-md-7 text-grey">
+      <h1 class="text-center title-large">{{prodSelected.nombre}}</h1>
+     
+        <p class="mx-auto mt-4 mb-5 title-small text-justify">{{prodSelected.detalle}}</p>
+        <h5 class="w-100 mb-3 text-center text-sm-left">Propiedades</h5>
+
         <div class="row">
-          <p class="mx-auto my-4 title-small px-2">{{prodSelected.detalle}}</p>
-            <h4 class="w-100 mb-4 px-2">Propiedades</h4>
-            
-            <ul class="mx-auto mx-sm-0 icon-list list-group flex-row">
-              <li class="list-group-item"><i class="fa fa-cubes fa-5x"></i></li>
-              <li class="list-group-item"><i class="fa fa-tint fa-5x"></i></li>
-              <li class="list-group-item"><i class="fa fa-home fa-5x"></i></li>
-            </ul>
-            <h4 class="w-100 mb-4">Usos del producto</h4>
-            <li class="list-group-item" *ngFor="let listado of ListOfUsos">
-              <a routerLink="/uso/{{listado.u_titulo}}">{{listado.u_titulo}}</a>
-            </li>
+          <div class="col-md-6 mx-auto mx-md-0" >
+            <div class="row">
+              <div class="col border  p-3 d-flex justify-content-center align-items-center rounded-0">
+                <i class="fa fa-cubes fa-3x"></i>
+              </div>
+              <div class="col border p-3 d-flex justify-content-center align-items-center rounded-0">
+                <i class="fa fa-tint fa-3x"></i>
+              </div>
+              <div class="col border p-3 d-flex justify-content-center align-items-center rounded-0">
+                <i class="fa fa-home fa-3x"></i>
+              </div>
+            </div>
+
+          </div>
         </div>
+        <h5 class="w-100 mt-3 text-center text-sm-left">Usos del producto</h5>
+       
+      
+    </div>
+    <!-- parte der. -->
+    <div class="col-md-5 d-flex mt-4 flex-column bg-white">
+      <div class="d-flex ">
+        <img src=".{{prodSelected.imagen}}" class="img-fluid align-self-start mx-auto" alt="">
       </div>
-      <!-- parte der. -->
-      <div class="col-md-5 d-flex flex-column bg-white">
-        <div class="d-flex ">
-          <img src=".{{prodSelected.imagen}}" class="img-fluid align-self-start mx-auto" alt="">
-        </div>
-        <div class="bg-warning d-flex mt-3">
-          <button type="button" class="btn btn-block btn-lg btn-custom rounded-0 text-white">VER FICHA TÉCNICA</button>
-        </div>
+      <div class="bg-warning d-flex">
+        <button type="button" class="btn btn-block btn-lg btn-custom rounded-0 text-white">VER FICHA TÉCNICA</button>
       </div>
     </div>
-    <button type="button" class="btn btn-sm btn-dark m-5 back">
-    <a class="btn text-white" routerLink="/productos">Volver</a>
-  </button>
  
-  
+    <div class="col-md-12  mt-4 p-0">
+      <button type="button" class="btn btn-sm btn-dark back d-block mx-auto float-md-left  ">
+        <a class="btn text-white " routerLink="/productos">Volver</a>
+      </button>
+    </div>
+  </div>
+
 </div>
 <app-footer></app-footer>

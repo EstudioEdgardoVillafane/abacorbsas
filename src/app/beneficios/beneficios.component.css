@@ -25,9 +25,12 @@
 .beneficios button{
     font-size: 1.2rem!important;
 }
-.bg-cartel{
-    background-color: #565458; 
+.cartel{
+    background-color: #09abbc; 
     min-height: 60px;
+}
+.cartel h4{
+    font-size: 2rem;
 }
 .btn-color{
     background-color: #659b01;
@@ -36,6 +39,12 @@
 @media screen and (max-width:768px) {
     .beneficios button{
         font-size: .9rem!important;
+    }
+
+ }
+ @media screen and (max-width:425px) {
+    .cartel h4{
+        font-size: 1rem;
     }
 
  }

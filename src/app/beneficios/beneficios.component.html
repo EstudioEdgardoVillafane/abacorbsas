@@ -1,42 +1,47 @@
-<app-navbar ></app-navbar>
-<div *ngIf="!totodos;else other_content">
-<div class="row p-0 mx-0">
-  <div class="mb-4 px-0 px-md-3 px-lg-5">
-    <div class="w-100 banda-sup">
-      <h1 class="text-center text-dark title-large my-4 pl-3">Nuestros Beneficios</h1>
-      <h5 class="text-dark my-4 pl-3"><em> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</em></h5>
-      <p class="col-md-8 pl-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia reprehenderit cum nostrum labore ad ipsum facere
-        maiores unde. Voluptatibus ab deserunt inventore blanditiis placeat pariatur facere vel deleniti consectetur dicta.</p>
-    </div>
+<app-navbar></app-navbar>
 
-    <div class="row p-0 mx-0 d-flex justify-content-center mb-5 beneficios">
-      <div class="col-md-3 d-flex flex-column mb-3" *ngFor="let beneficio of beneficios" [class.selected]="beneficio === selectedBenefic"
-        >
-        <div class=" d-flex ">
-          <img src=".{{beneficio.imagen}}" class="img-fluid align-self-start mx-auto" alt="">
-        </div>
-        <div class="d-flex">
-          <button type="button" class="btn btn-color text-white btn-block btn-custom rounded-0 text-white " routerLink="/beneficio/{{beneficio.id}}">{{beneficio.nombre | uppercase}}</button>
+<!-- <div *ngIf="!totodos;else other_content"> -->
+<div class="container-fluid">
+  <div class="row p-0 mx-0">
+    <div class="mb-4 px-0 px-md-3 px-lg-5">
+      <div class="w-100 banda-sup">
+        <h1 class="text-center text-dark title-large my-4 pl-3">Nuestros Beneficios</h1>
+        <h5 class="text-dark my-4 pl-3">
+          <em> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</em>
+        </h5>
+        <p class="col-md-8 pl-3 text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia reprehenderit cum nostrum labore ad ipsum facere
+          maiores unde. Voluptatibus ab deserunt inventore blanditiis placeat pariatur facere vel deleniti consectetur dicta.</p>
+      </div>
+
+      <div class="row p-0 mx-0 d-flex justify-content-center mb-5 beneficios">
+        <div class="col-md-3 d-flex flex-column mb-3" *ngFor="let beneficio of beneficios" [class.selected]="beneficio === selectedBenefic">
+          <div class=" d-flex ">
+            <img src="{{beneficio.imagen}}" class="img-fluid align-self-start mx-auto" alt="">
+          </div>
+          <div class="d-flex">
+            <button type="button" class="btn btn-color text-white btn-block btn-custom rounded-0 text-white " routerLink="/beneficio/{{beneficio.id}}">{{beneficio.nombre | uppercase}}</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="w-100 mt-4 d-flex bg-cartel justify-content-center">
-    <a routerLink="/hag-dist" class="d-flex align-self-center">
-      <h1 class="text-white m-0 ">SEA DISTRIBUIDOR</h1>
-      
+  <div class="row mt-4 ">
+    <div class="w-100 cartel d-flex justify-content-center align-items-center">
+    <a routerLink="/hag-dist" class="btn">
+      <h4 class="text-white m-0">SEA DISTRIBUIDOR</h4>
     </a>
   </div>
 </div>
-</div>
-<ng-template #other_content>
+
+<!-- </div> -->
+
+<!-- <ng-template #other_content>
 <div class="row p-0 mx-0">
     <div class="mb-4 px-5">
       <div class="w-100 banda-sup">
         <h1 class="text-center text-dark title-large my-4">Nuestros Beneficios</h1>
         <h5 class="text-dark my-4"><em> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</em></h5>
-        <p class="w-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia reprehenderit cum nostrum labore ad ipsum facere
+        <p class="w-50 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia reprehenderit cum nostrum labore ad ipsum facere
           maiores unde. Voluptatibus ab deserunt inventore blanditiis placeat pariatur facere vel deleniti consectetur dicta.</p>
       </div>
   
@@ -61,7 +66,6 @@
       </a>
     </div>
   </div>
-</ng-template>
+</ng-template> -->
+</div>
 <app-footer></app-footer>
-
-
