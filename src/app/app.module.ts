@@ -31,7 +31,8 @@ import { ReplaceLineBreaksPipe } from './replace-line-breaks.pipe';
 import { ItemUsoComponent } from './item-uso/item-uso.component';
 import { AdminService } from './admin.service';
 import { BackendCentComponent } from './backend-cent/backend-cent.component';
-
+import { ContactoService } from './contacto.service';
+import { ThanksComponent } from './thanks/thanks.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { BackendCentComponent } from './backend-cent/backend-cent.component';
     ContentComponent,
     CaracteristicasComponent,
     ItemUsoComponent,
-    BackendCentComponent
+    BackendCentComponent,
+    ThanksComponent
   ],
   imports: [
     HttpModule,
@@ -67,7 +69,7 @@ import { BackendCentComponent } from './backend-cent/backend-cent.component';
     HttpClientModule
     // EditorModule
   ],
-  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService],
+  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService,ContactoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

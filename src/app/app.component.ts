@@ -10,12 +10,17 @@ declare var $:any;
 })
 
 export class AppComponent implements OnInit{
-     
+
+    
+    
+
     constructor() {
     }
 
     ngOnInit(){
+        
     }
+
 
     //funciones de jquery
 

@@ -17,4 +17,8 @@ export class BackendCentComponent implements OnInit {
   goUser(){
     this.router.navigate(['usuarios'], {relativeTo: this.route});
   }
+  closeSession(){
+    localStorage.removeItem("keyTwo");
+    location.href="../../home";
+  }
 }

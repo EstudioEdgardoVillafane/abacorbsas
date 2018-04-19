@@ -48,9 +48,12 @@ export class BackendUsuariosComponent implements OnInit {
   edit;
   edit_usuarios;
   listado;
-  constructor( private BackendUsuarioService:BackendUsuarioService ) { }
+  constructor( private BackendUsuarioService : BackendUsuarioService ) { }
 
   ngOnInit() {
+    if(localStorage.getItem("keyTwo") != "1"){
+      location.href="../../admin";
+    }
     this.Listar();
   }
 
@@ -82,15 +85,11 @@ export class BackendUsuariosComponent implements OnInit {
   Listar(){
     this.BackendUsuarioService.validateUser().subscribe((data) => {
       console.log(data.text());
-      // if(data.text() == ""){
-        // location.href="../../admin";
-      // }else{
         this.BackendUsuarioService.Conect(5,0,"0","0","0")
           .map((response) => response.json())
           .subscribe((data) => { 
           this.listado = data;
         });
-      // }
      });
   }
 

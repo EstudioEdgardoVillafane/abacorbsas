@@ -113,7 +113,7 @@
 
     <div class="row">
       <div class="col-5">
-      <h2>Tabla de usuarios.</h2><button  (click)="ShowEditForm(1)">sddsdsdf</button>
+      <h2>Tabla de usuarios.</h2>
 
     </div>
     <div class="col-7">
@@ -134,7 +134,7 @@
       </thead>
 
       <tbody>
-          <tr *ngFor="let usuarios of Listed"> 
+          <tr *ngFor="let usuarios of listado"> 
             <td><input type="checkbox" class="tilde" value="{{usuarios.u_id}}" (click)="Check(usuarios.u_id)"></td>
             <td>{{usuarios.u_usuario}}</td>
             <td>{{usuarios.u_mail}}</td>

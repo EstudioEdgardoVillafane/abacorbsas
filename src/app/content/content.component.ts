@@ -5,8 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
-import { BackendUsuarioService } from '../backend-usuario.service'
-    
+import { BackendUsuarioService } from '../backend-usuario.service';
+import { AdminComponent } from '../admin/admin.component';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -51,6 +51,9 @@ export class ContentComponent implements OnInit {
   /** Calling the function ListContent to do the list of content. */
 
   ngOnInit() {
+    if(localStorage.getItem("keyTwo") != "1"){
+      location.href="../../admin";
+    }
     this.ListContent();
     this.Listarproductos();
   }

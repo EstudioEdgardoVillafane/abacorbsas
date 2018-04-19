@@ -16,7 +16,7 @@ import { ContentComponent } from '../content/content.component';
 import { CaracteristicasComponent } from '../caracteristicas/caracteristicas.component';
 import { ItemUsoComponent } from '../item-uso/item-uso.component';
 import { BackendCentComponent } from '../backend-cent/backend-cent.component';
-
+import { ThanksComponent } from '../thanks/thanks.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'admin', component: AdminComponent },
@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'beneficio/:id', component: BeneficiosComponent },
   { path: 'uso', component: CaracteristicasComponent },
   { path: 'uso/:nombre', component: ItemUsoComponent },
-  { path: 'usuariosd', component: BackendUsuariosComponent },
+  { path: 'enviado', component: ThanksComponent},
   { path: 'admin/online',
     component: BackendCentComponent,
     children:[
@@ -51,4 +51,5 @@ const routes: Routes = [
 ],
   declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+}
