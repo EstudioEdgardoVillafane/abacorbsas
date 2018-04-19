@@ -22,10 +22,11 @@ export class BackendUsuariosComponent implements OnInit {
   u_mail;
   u_contrasena;
   ConfirmPassword;
+
   //edit
   ConfirmNewPassword;
   Password;
-
+  Id;
 
   Listed;
 //the function of these boleans are for validation alerts
@@ -87,8 +88,8 @@ export class BackendUsuariosComponent implements OnInit {
         this.BackendUsuarioService.Conect(5,0,"0","0","0")
           .map((response) => response.json())
           .subscribe((data) => { 
-          this.listado = data;
-        });
+                this.Listed = data;
+          });
       // }
      });
   }
@@ -100,6 +101,7 @@ export class BackendUsuariosComponent implements OnInit {
     this.u_contrasena = document.getElementById("NewPassword");
     this.ConfirmNewPassword = document.getElementById("ConfirmNewPassword");
     this.Password = document.getElementById("Password");
+    this.Id = document.getElementById("u_id");
 //when don´t press the button " cambiar contrasena" in the edit form
     if(this.EditPasswordVar == false ){
 
@@ -115,11 +117,11 @@ export class BackendUsuariosComponent implements OnInit {
         this.AlertMail = false;
       }
       if(this.u_usuario.value != "" && this.u_mail.value != ""){
-        this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
+        this.BackendUsuarioService.Conect(7,u_id,this.u_usuario.value,this.u_mail.value,"0")
         .subscribe((data)=>{ this.var=data;});
             // this.ListBackendUsers();
-          location.reload();
-      }
+          //location.reload();
+        }
 //when press the button " cambiar contrasena" in the edit form
     }else if(this.EditPasswordVar == true){
 
@@ -148,15 +150,21 @@ export class BackendUsuariosComponent implements OnInit {
       }
 
       if(this.u_usuario.value != "" && this.u_mail.value != "" && this.u_contrasena.value == this.ConfirmNewPassword.value && this.u_contrasena != "" && this.Password.value != ""){
-        this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
-        .subscribe((data)=>{ this.var=data;});
-            // this.ListBackendUsers();
-       location.reload();
-      }
-    }
-
+        this.BackendUsuarioService.Confirm(8,u_id,this.Password.value,"0")
+        .subscribe((data)=>{
+          console.log(data.text()); 
+          if(data.text() == " 0"){
+            this.AlertPassword = true;
+          }else{
+              this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
+              .subscribe((data)=>{ this.var=data;});
+   //           location.reload();
+           
+          }  
+        });
+        }
+     } 
   }
-
 // this function accumulates the checks that are in the table to be deleted later
   Check(u_id : number){
      this.Booleano=true;    

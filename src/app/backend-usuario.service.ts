@@ -15,6 +15,11 @@ export class BackendUsuarioService {
     return this.Http.get('php/scripts/usuarios.php?data='+func+'&u_id='+u_id+"&u_usuario="+u_usuario+"&u_mail="+u_mail+"&u_contrasena="+u_contrasena);
      //Devuelve el resultado del php como objeto.
   }
+  Confirm(Funct: number, u_id : number, Password : string, u_usuario : string){
+    
+    return this.Http.get('php/scripts/usuarios.php?data='+Funct+'&u_id='+u_id+"&Password="+Password+'&u_usuario='+u_usuario);
+     //Devuelve el resultado del php como objeto.
+  }
   validateUser(){
     return this.Http.get('php/scripts/user-validate.php');
   }
