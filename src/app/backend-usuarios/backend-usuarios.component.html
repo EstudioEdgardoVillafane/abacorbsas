@@ -113,8 +113,12 @@
 
 <div *ngIf="ChangeTemplateEditar;else Agregar" class="mt-4">
 
-  <div class="row">
-    <div class="col-5"><h2>Tabla de usuarios.</h2></div>
+
+    <div class="row">
+      <div class="col-5">
+      <h2>Tabla de usuarios.</h2>
+
+    </div>
     <div class="col-7">
       <button class="btn btn-md btn-info pull-right ml-1" (click)="ShowStoreForm()">Agregar</button>
       <button class="btn btn-md btn-danger pull-right ml-1" (click)="Delete()">Eliminar</button>
@@ -133,7 +137,7 @@
       </thead>
 
       <tbody>
-          <tr *ngFor="let usuarios of Listed"> 
+          <tr *ngFor="let usuarios of listado"> 
             <td><input type="checkbox" class="tilde" value="{{usuarios.u_id}}" (click)="Check(usuarios.u_id)"></td>
             <td>{{usuarios.u_usuario}}</td>
             <td>{{usuarios.u_mail}}</td>

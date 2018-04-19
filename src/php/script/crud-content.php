@@ -20,7 +20,7 @@
 		$NewConnect->ExecuteSql($sql);
 
 	}elseif($_GET["data"]==5){
-		$sql = "SELECT * FROM uso WHERE u_idproducto = '".$_GET["id"]."'";
+		$sql = "SELECT * FROM uso WHERE u_idproducto = '".$_GET["id"]."' AND u_status=1";
 		$NewConnect->CreateJson($sql);
 	}
 

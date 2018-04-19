@@ -1,6 +1,15 @@
-section{
+.contain{
     height: 100vh;
 }
 .wide-art{
     border-bottom: solid 1px #4e4e4e;
+}
+
+
+/* Móviles */
+@media screen and (max-width:425px) {
+  .responsive-title{
+      font-size: 1.4rem!important;
+  }
+
 }
