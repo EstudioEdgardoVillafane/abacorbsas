@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
-.bg-color{
-    background: linear-gradient(#3874bcb5,#555658b5);
-    font-family: 'PT Sans', sans-serif;
-}
+
 hr{
     border: solid 15px #0aabbd;
     margin: 0!important;
@@ -31,12 +27,18 @@ hr{
 }
 
 .icon-list ul li {
-    width: 105px;
-    min-height: 105px;
+    
     background-color: transparent;
     border-color: transparent!important;
    
 }
 .back{
     cursor: pointer!important;
+}
+
+.cuad {
+    min-width: 50px!important;
+    min-height: 50px!important;
+    box-sizing: content-box!important;
+    border: solid 1px #c7c7c7;
 }

@@ -1,22 +1,21 @@
 <app-navbar></app-navbar>
-<section class="mt-4">
-<div class="container">
+
+<div class="container-fluid contain py-4 h-100">
       <div class="row">
-      <div class="col-6">
+      <div class="col-sm-6">
           <ul class="list-group">
               <li class="list-group-item" *ngFor="let listado of ListOfContent"><a routerLink="/uso/{{listado.u_titulo}}">{{listado.u_titulo}}</a></li>
             </ul>
       </div>
-      <div class="col-6">
-        <h3>Lorem impsum gerenaton.</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum risus eu vestibulum euismod. Integer in molestie odio. Suspendisse dignissim posuere ultrices. Suspendisse gravida pretium ex, lobortis maximus turpis vehicula vel. Sed vitae eros sit amet tortor ultrices dictum. Quisque id arcu a dui volutpat molestie at at purus. Curabitur finibus ipsum quis feugiat vulputate. Maecenas laoreet justo neque, non porttitor sapien finibus a.</p>
+      <div class="col-sm-6 px-md-4">
+        <h3 class="d-inline-block text-sm-left text-center responsive-title">Lorem impsum gerenaton</h3>
+        <p class="tex-center text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum risus eu vestibulum euismod. Integer in molestie odio. Suspendisse dignissim posuere ultrices. Suspendisse gravida pretium ex, lobortis maximus turpis vehicula vel. Sed vitae eros sit amet tortor ultrices dictum. Quisque id arcu a dui volutpat molestie at at purus. Curabitur finibus ipsum quis feugiat vulputate. Maecenas laoreet justo neque, non porttitor sapien finibus a.</p>
       </div>
     </div>
 </div>
-</section>
 
 <!-- <ng-template #else_other>
   <app-item-uso></app-item-uso>
 </ng-template> -->
 
-<app-footer></app-footer>
+<app-footer ></app-footer>

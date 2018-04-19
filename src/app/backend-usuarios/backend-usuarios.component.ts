@@ -5,6 +5,7 @@ import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/map';
 import { catchError, map, tap } from 'rxjs/operators';
 import { BackendUsuarioService } from '../backend-usuario.service';
+
 @Component({
   selector: 'app-backend-usuarios',
   templateUrl: './backend-usuarios.component.html',

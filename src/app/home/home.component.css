@@ -63,10 +63,35 @@ section{
     form h2 {
        font-size: 2rem;
     }
+    .title-mini{
+        font-size: 1.3rem;
+        font-weight: 0;
+    }
 }
 @media screen and (max-width:320px) {
    .title-large {
-       font-size: 2.7rem;
+       font-size: 2rem;
     }
+
     
 }
+ /* Laptop and notebooks */
+ @media screen and (width: 1024px) {
+    .break-line-custom{
+        white-space: nowrap;
+    }
+}
+ @media screen and (width: 768px) {
+    .break-line-custom{
+        white-space: pre-wrap;
+    }
+    .title-large{
+        font-size: 2rem;
+        
+    }
+    .title-mini{
+        font-size: 1.2rem;
+        
+    }
+}
+  

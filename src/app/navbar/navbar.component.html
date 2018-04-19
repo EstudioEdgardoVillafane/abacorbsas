@@ -1,43 +1,41 @@
-<nav class="navbar navbar-expand-md navbar-light text-uppercase sticky-top p-0">
-  <div class="container ">
-  <a class="navbar-brand ml-3 mb-1 logo" href="#">
-    <img src="/assets/img/logo_w.png" class="img-fluid w-50" alt="">
-  </a>
-
-  <button (click)="bajaBot()" class="navbar-toggler ml-auto navbar-toggler-right bot-nav" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse p-0" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto p-0 ">
-      <li class="nav-item d-flex bd-dark">
-        <a class="nav-link text-white mx-auto" routerLink="/home">Home</a>
-      </li>
-      <li class="nav-item d-flex">
-        <a class="nav-link text-white mx-auto" routerLink="/productos">Productos</a>
-      </li>
-      <li class="nav-item d-flex">
-          <a class="nav-link text-white mx-auto" routerLink="/uso">Usos</a>
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
+  <div class="container-fluid">
+    <div class="d-flex flex-column" >
+      <img src="/assets/img/logo_w.png" class="img-fluid mx-auto h-img" alt="">
+      <h5 class="text-white h-text">Buenos Aires</h5>
+    </div>
+    <button class="navbar-toggler ml-auto navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse p-0" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto my-auto p-0 text-uppercase">
+        <li class="nav-item d-flex bd-dark">
+          <a class="nav-link text-white mx-auto " routerLink="/home">Home</a>
         </li>
-      <li class="nav-item d-flex">
-        <a class="nav-link text-white mx-auto" routerLink="/beneficios">Beneficios</a>
-      </li>
-      <li class="nav-item d-flex">
-        <a class="nav-link text-white mx-auto" routerLink="/como-llegar">Cómo llegar</a>
-      </li>
-      <!--------borrar---------->
-      <li class="nav-item d-flex mr-2">
-          <a class="nav-link text-white mx-auto" routerLink="/contacto">Contacto</a>
+        <li class="nav-item d-flex">
+          <a class="nav-link text-white mx-auto " routerLink="/productos">Productos</a>
+        </li>
+        <li class="nav-item d-flex">
+          <a class="nav-link text-white mx-auto " routerLink="/uso">Usos</a>
+        </li>
+        <li class="nav-item d-flex">
+          <a class="nav-link text-white mx-auto " routerLink="/beneficios">Beneficios</a>
+        </li>
+        <li class="nav-item d-flex">
+          <a class="nav-link text-white mx-auto " style="white-space: pre" routerLink="/como-llegar">Cómo llegar</a>
+        </li>
+        <!--------borrar---------->
+        <li class="nav-item d-flex mr-2">
+          <a class="nav-link text-white mx-auto " routerLink="/contacto">Contacto</a>
         </li>
         <li class="nav-item d-flex ">
-            <span class="nav-link text-white box-phone mx-auto"><i class="fa fa-phone"></i>&nbsp;011 4844-0128</span>
-          </li>
-    </ul>
-   
+          <span class="nav-link text-white box-phone mx-auto align-self-center">
+            <i class="fa fa-phone"></i>&nbsp;011 4844-0128</span>
+        </li>
+      </ul>
+
+    </div>
+
   </div>
-
-</div>
 </nav>
-
-

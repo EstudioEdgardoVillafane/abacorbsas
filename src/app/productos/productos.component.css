@@ -33,31 +33,19 @@ hr{
     background-color: #659b01;
 }
 
-/* Móviles */
-/* @media screen and (max-width:425px) {
-    .padding-main{
-     padding: 30px 15px;
- }
- .img-prod{
-    max-width: 50%;
-}
-#producto p{
-    word-break: break-all; 
-}
 
- }
-
- @media screen and (max-width:768px) {
-    .title-name{
-        font-size: .7rem!important;
-        word-break: break-all; 
-     }
-    .btn{
-        font-size: .4rem!important;
-        word-wrap: break-word!important;
-     }
+ /* Laptop and notebooks */
+ @media screen and (width: 1024px) {
+    .break-line-custom{
+        white-space: nowrap;
+    }
 }
-  */
+ @media screen and (width: 768px) {
+    .break-line-custom{
+        white-space: pre-wrap;
+    }
+}
+  
 
  
 
