@@ -8,7 +8,7 @@ nav .navbar-nav li{
     font-size: 1.09rem;
     font-weight: 400;
     border:1px solid transparent!important;
-    transition: border .18s ease-in-out;
+    transition: all .18s ease-in-out;
     cursor: pointer;
 }
 nav .navbar-nav li:hover:not(:last-child){
@@ -47,17 +47,21 @@ left: 2%;
     position: sticky;
     top:30px;
 }
+
 /* Móvil medium */
 @media screen and (max-width:425px) {
-    .navbar-nav li:hover {
-        border-color: #fff!important;
-    }
+    
     .bg-xs{
         background-color:#909090;
     }
      .btn-hamburger{
        background-color: none!important;
        border:solid 1px rgba(255, 255, 255, 0.5)!important; 
+    }
+    nav .navbar-nav li:hover{
+        border-left-color:transparent!important;
+        border-right-color:transparent!important;
+        border-top-color:transparent!important;
     }
    
 }
