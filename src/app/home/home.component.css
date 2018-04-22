@@ -3,6 +3,11 @@ section{
    
     font-family: 'Oxygen', sans-serif;
  }
+ .alert{
+     padding:-10px;
+    
+
+ }
 
 .main{
     background: url("../../assets/img/construction_overlay.jpg");
