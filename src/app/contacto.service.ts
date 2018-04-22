@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class ContactoService {
 
   constructor(private http: Http) { }
-  Send(email: string, consulta: string, nombre: string, telefono: number){
-    return this.http.get('php/script/send-mail.php?email='+email+'&consulta='+consulta+'&nombre='+nombre+'&telefono='+telefono);
+  Send(email: string, question: string, name: string, phone: number){
+    return this.http.get('php/script/send-mail.php?email='+email+'&question='+question+'&name='+name+'&phone='+phone);
   }
 }
