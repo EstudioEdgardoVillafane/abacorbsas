@@ -13,11 +13,19 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script type="script" src="../script.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-beta.4/classic/ckeditor.js"></script>
+
 </head>
 <body>
 
   <app-root></app-root>
     <!-- <script>tinymce.init({ selector:'textarea' });</script> -->
-
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 </body>
 </html>

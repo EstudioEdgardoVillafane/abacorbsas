@@ -71,7 +71,7 @@ export class BackendUsuariosComponent implements OnInit {
   ShowEditForm(u_id : number){
     this.ChangeTemplateAgregar=false;
     this.ChangeTemplateEditar=false;
-    this.BackendUsuarioService.getJsonID(u_id,this.Listed)
+    this.BackendUsuarioService.getJsonID(u_id,this.listado)
     .subscribe(resultado => this.edit_usuarios = resultado);
   }
 
@@ -80,6 +80,11 @@ export class BackendUsuariosComponent implements OnInit {
     this.ChangeTemplateEditar=true;
     this.ChangeTemplateAgregar=true;
     this.EditPasswordVar = false;
+    this.AlertUser = false;
+    this.AlertConfirmPassword = false;
+    this.AlertMail = false;
+    this.AlertNewPassword = false;
+    this.AlertPassword = false;
   }
 
 

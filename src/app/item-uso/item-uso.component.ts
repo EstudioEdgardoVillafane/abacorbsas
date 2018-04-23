@@ -25,12 +25,15 @@ export class ItemUsoComponent implements OnInit {
       this.List = data;
       this.getUso(this.List);
     });
-    this.route.snapshot.params['slug'].replace(/-/g,' ');
+    // this.route.snapshot.params['nombre'].replace(/-/g,' ');
   }
  
   getUso(json): void {
     const name = this.route.snapshot.paramMap.get('nombre');
     this.usoService.getJsonForName(name,json)
-    .subscribe(resultado => this.ListSelect = resultado);
+    .subscribe((resultado) => { 
+      this.ListSelect = resultado;
+      this.ListSelect.u_titulo = this.ListSelect.u_titulo.replace(/-/g,' '); 
+    });
   }
 }

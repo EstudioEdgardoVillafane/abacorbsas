@@ -7,6 +7,8 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import { BackendUsuarioService } from '../backend-usuario.service';
 import { AdminComponent } from '../admin/admin.component';
+import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -16,7 +18,14 @@ import { AdminComponent } from '../admin/admin.component';
 
 
 export class ContentComponent implements OnInit {
- 
+
+  ClassicEditor
+  .create( document.querySelector( '#editor' ), {
+      plugins: [ Autoformat, ... ],
+      toolbar: [ ... ]
+  } )
+  .then( ... )
+  .catch( ... ); 
   /** This is the declaration of the variables. */
 
   CheckAcumulador = new Array();
@@ -224,6 +233,7 @@ export class ContentComponent implements OnInit {
 
     /** This function is storing the new regist in a database */
     boolPrueb = false;
+    
     Store(){
 
       if(this.ValidateForm()){
@@ -233,6 +243,6 @@ export class ContentComponent implements OnInit {
       console.log(this.request.send(new FormData(this.formElement)));
       this.ListContent();
       this.boolPrueb = true;
-    }
+      }
     }
 }

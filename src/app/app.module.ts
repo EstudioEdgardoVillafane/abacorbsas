@@ -33,6 +33,7 @@ import { AdminService } from './admin.service';
 import { BackendCentComponent } from './backend-cent/backend-cent.component';
 import { ContactoService } from './contacto.service';
 import { ThanksComponent } from './thanks/thanks.component';
+import { ChangeLinePipe } from './change-line.pipe';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ThanksComponent } from './thanks/thanks.component';
     CaracteristicasComponent,
     ItemUsoComponent,
     BackendCentComponent,
-    ThanksComponent
+    ThanksComponent,
+    ChangeLinePipe
   ],
   imports: [
     HttpModule,

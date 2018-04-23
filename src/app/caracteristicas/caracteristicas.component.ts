@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
-
+// import { } from ''
 @Component({
   selector: 'app-caracteristicas',
   templateUrl: './caracteristicas.component.html',
@@ -16,12 +16,16 @@ export class CaracteristicasComponent implements OnInit {
   constructor(private contentService: ContentService) { }
 
   ListOfContent;
-
+  Aux;
   ngOnInit() {
+   this.Listado();
+  }
+
+  Listado(){
     this.contentService.CrudFunction(1,0,'','','','','')
     .map((response) => response.json())
     .subscribe((data) => { 
-      this.ListOfContent = data;
+      this.ListOfContent = data; 
     });
   }
 }

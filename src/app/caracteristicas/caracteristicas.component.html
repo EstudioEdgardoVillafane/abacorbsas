@@ -9,7 +9,7 @@
       </div>
       <div class="col-sm-6">
           <ul class="list-group">
-              <li class="list-group-item" *ngFor="let listado of ListOfContent"><a routerLink="/uso/{{listado.u_titulo}}">{{listado.u_titulo}}</a></li>
+              <li class="list-group-item" *ngFor="let listado of ListOfContent"><a class="toto" name="toto" routerLink="/uso/{{listado.u_titulo}}"><i class="fa fa-caret-right"></i> {{listado.u_titulo | changeLine}}</a></li>
             </ul>
       </div>
     </div>

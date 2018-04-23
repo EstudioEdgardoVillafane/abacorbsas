@@ -1,7 +1,5 @@
 import { Productos } from './productos-class';
-
 export const PRODUCTOS : Productos[] = [
-    
     {id: 1, nombre: 'Abamix  Impermeable', imagen:"/assets/img/impermeable.png" },
     {id: 2, nombre: 'Abamix  Premium', imagen:"/assets/img/premium.png" },
     {id: 3, nombre: 'Membrana  Cementícia', imagen:"/assets/img/membranacement.png" },
@@ -10,5 +8,4 @@ export const PRODUCTOS : Productos[] = [
     {id: 6, nombre: 'Stuko \n Abacor', imagen:"/assets/img/stukor.png" },
     {id: 7, nombre: 'Pastina  Impermeable', imagen:"/assets/img/pastina.png" },
     {id: 8, nombre: 'Mortero  Base Coat', imagen:"/assets/img/mortero.png" }
-   
 ];

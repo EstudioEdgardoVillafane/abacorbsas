@@ -196,7 +196,7 @@
             <tbody>
               <tr *ngFor="let content of ListOfContent"> 
                 <td><input type="checkbox" class="tilde" value="{{content.u_id}}" (click)="onCheck(content.u_id)"></td>
-                <td>{{content.u_titulo}}</td>
+                <td>{{content.u_titulo | changeLine}}</td>
                 <td>{{content.u_subtitulo}}</td>
                 <td>{{content.u_parrafo}}</td>
                 <td>{{content.p_nombre}}</td>

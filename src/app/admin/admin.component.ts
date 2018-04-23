@@ -21,15 +21,16 @@ export class AdminComponent implements OnInit {
   userValue ;
   Listado;
   usuario;
- contrasena;
-  Obj;
+  contrasena;
   BooleanAlertLogin = false;
   Aux : string;
  
   onClick(){
     this.usuario=document.getElementById("usuario");
     this.contrasena= document.getElementById("contrasena");
-    this.AdminService.Conect(1,0,this.usuario.value,this.contrasena.value)
+    this.AdminService.Conect(
+      1,0,this.usuario.value,this.contrasena.value
+    )
     .subscribe((data) => {
       console.log(data.text());
      if(data.text() == " 0"){
@@ -40,8 +41,6 @@ export class AdminComponent implements OnInit {
       }
     });
   }
-
-
 
   ngOnInit() {
     if(localStorage.getItem("keyTwo") == "1"){

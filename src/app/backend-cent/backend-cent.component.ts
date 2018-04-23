@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap} from '@angular/router';
+import { AdminComponent } from '../admin/admin.component';
 @Component({
   selector: 'app-backend-cent',
   templateUrl: './backend-cent.component.html',
@@ -7,9 +8,10 @@ import { ActivatedRoute, Router, ParamMap} from '@angular/router';
 })
 export class BackendCentComponent implements OnInit {
 
-  constructor(private route : ActivatedRoute, private router : Router) { }
+  constructor(private route : ActivatedRoute, private router : Router) {   }
 
   ngOnInit() {
+
   }
   goUso(){
     this.router.navigate(['usos'], {relativeTo: this.route});

@@ -5,6 +5,8 @@ require_once '../class/connect.php';
 $NewConnect = new Abacor();
 	
 	$Titulo = $_POST["titulo"];
+	$Titulo = str_replace(" ","-",$Titulo);
+	
 	$Subtitulo = $_POST["subtitulo"];
 	$Parrafo = $_POST["parrafo"];
 	$idproducto=$_POST["producto"];
