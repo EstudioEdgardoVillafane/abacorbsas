@@ -18,14 +18,7 @@ import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 
 
 export class ContentComponent implements OnInit {
-
-  ClassicEditor
-  .create( document.querySelector( '#editor' ), {
-      plugins: [ Autoformat, ... ],
-      toolbar: [ ... ]
-  } )
-  .then( ... )
-  .catch( ... ); 
+ 
   /** This is the declaration of the variables. */
 
   CheckAcumulador = new Array();

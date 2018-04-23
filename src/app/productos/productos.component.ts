@@ -7,7 +7,9 @@ import {PRODUCTOS} from '../mock-productos';
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css']
 })
+
 export class ProductosComponent implements OnInit {
+
   productos = PRODUCTOS; //aquí asignamos a la variable 'products'el mock externo llamado 'PRODUCTOS'
   selectedProduct: Productos; //Productos -> nombre de la clase
 
@@ -17,7 +19,6 @@ export class ProductosComponent implements OnInit {
   }
 
   onSelect(prod: Productos): void {
-   // alert('hola' + prod.id );
     this.selectedProduct = prod;
    }
  

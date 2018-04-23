@@ -25,4 +25,7 @@ export class ContentService {
   getJsonForName(name:string, json){
     return of(json.find((primero => primero.u_titulo === name)));
   }
+  getJsonForNameTwo(name:string, json){
+    return of(json.find((primero => primero.nombre === name)));
+  }
 }

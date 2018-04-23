@@ -3,3 +3,10 @@ export class Productos{
     nombre:string;
     imagen:string;    
 }
+export class ProductosCaract{
+    id:number;
+    nombre:string;
+    detalle:string;
+    imagen:string;
+    imagenDet;    
+}

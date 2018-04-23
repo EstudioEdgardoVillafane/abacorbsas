@@ -6,9 +6,9 @@
           <div class="row p-3 m-0 d-flex justify-content-center">
             <div id="producto" *ngFor="let producto of productos" [class.selected]="producto === selectedProduct" (click)="onSelect(_prod)"
               class="col-md-3 px-3 bg-white mb-3 p-0">
-              <div class="mx-auto" [routerLink]="['/detalle-productos',producto.id]">
+              <div class="mx-auto" [routerLink]="['/detalle-productos',producto.nombre]">
                 <img src="{{producto.imagen}}" class="img-fluid d-flex mx-auto w-50" alt="">
-                <p class="mx-auto text-center text-dark mt-3 break-line-custom">{{producto.nombre}}</p>
+                <p class="mx-auto text-center text-dark mt-3 break-line-custom">{{producto.nombre | changeLine }}</p>
                 <button class="btn btn-color btn-block rounded-0 text-white butt-prod px-md-2 d-block mt-auto">Ver producto</button>
               </div>
             </div>

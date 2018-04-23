@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'home', component: HomeComponent },
   { path: 'productos', component: ProductosComponent },
-  { path: 'detalle-productos/:prodId', component: DetalleProductosComponent },
+  { path: 'detalle-productos/:nombre', component: DetalleProductosComponent },
   { path: 'beneficios', component: BeneficiosComponent },
   { path: 'detalle-beneficios/:benefId', component: DetalleBeneficiosComponent },
   { path: 'como-llegar', component: ComoLlegarComponent },
