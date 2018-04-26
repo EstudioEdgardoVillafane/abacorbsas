@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DETBENEFICIOS } from "./beneficios/det-benef-mock";
+import { DETBENEFICIOS } from "./detalle-beneficios/det-benef-mock";
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 

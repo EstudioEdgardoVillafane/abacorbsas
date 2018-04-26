@@ -8,7 +8,7 @@
         <p class="mx-auto mt-4 mb-5 title-small text-justify">{{ListSelect.detalle}}</p>
         <h5 class="w-100 mb-3 text-center text-sm-left">Propiedades</h5>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-xl-5 col-lg-6 col-md-8 mx-auto mx-md-0" >
             <div class="row">
               <div class="col border  p-3 d-flex justify-content-center align-items-center rounded-0">
@@ -21,9 +21,8 @@
                 <i class="fa fa-home fa-3x"></i>
               </div>
             </div>
-
           </div>
-        </div>
+        </div> -->
         <h5 class="w-100 mt-3 text-center text-sm-left">Usos del producto</h5>
         <li class="list-group-item" *ngFor="let listado of ListOfUsos">
           <a routerLink="/uso/{{listado.u_titulo}}">{{listado.u_titulo | changeLine}}</a>
@@ -35,7 +34,7 @@
         <img src=".{{ListSelect.imagen}}" class="img-fluid align-self-start mx-auto" alt="">
       </div>
       <div class=" d-flex">
-        <button type="button" class="btn btn-block btn-lg btn-custom rounded-0 text-white mt-4">VER FICHA TÉCNICA</button>
+        <button (click)="verFicha(ListSelect.id)"type="button" class="btn btn-block btn-lg btn-custom rounded-0 text-white mt-4">VER FICHA TÉCNICA</button>
       </div>
     </div>
  

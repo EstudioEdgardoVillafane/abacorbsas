@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<div class="container-fluid p-4">
+  <div class="row px-3 main">
+    <!-- parte izq. -->
+    <div class="col-md-7 mx-auto text-grey">
+      <h1 class="text-center title-large">{{ficha.nombre}}</h1>
+      
+      <p class="mx-auto mt-4 mb-5 title-small text-justify">{{ficha.descrip}}</p>
+
+      <h5 *ngIf="ficha.preparacion">Preparación</h5>
+      <p>{{ficha.preparacion}}</p>
+
+      <h5 *ngIf="ficha.aplicacion">Aplicación</h5>
+      <p>{{ficha.aplicacion}}</p>
+
+      <h5 *ngIf="ficha.proceso">Proceso de impermeabilización permanente y definitiva</h5>
+      <p>{{ficha.proceso}}</p>
+
+      <h5 *ngIf="ficha.durabilidad">Durabilidad</h5>
+      <p>{{ficha.durabilidad}}</p>
+
+      <h5 *ngIf="ficha.tiempo_secado">Tiempo de secado</h5>
+      <p>{{ficha.tiempo_secado}}</p>
+
+      <h5 *ngIf="ficha.tiempo_abierto">Tiempo abierto</h5>
+      <p>{{ficha.tiempo_abierto}}</p>
+
+      <h5 *ngIf="ficha.tiempo_correccion">Tiempo de corrección</h5>
+      <p>{{ficha.tiempo_correccion}}</p>
+
+      <h5 *ngIf="ficha.presentacion">Presentación</h5>
+      <p>{{ficha.presentacion}}</p>
+
+      <h5 *ngIf="ficha.consumo">Consumo aproximado</h5>
+      <p>{{ficha.consumo}}</p>
+
+      <h5 *ngIf="ficha.vida">Vida útil</h5>
+      <p>{{ficha.vida}}</p>
+
+      <h5 *ngIf="ficha.recomendacion">Recomendaciones</h5>
+      <p>{{ficha.recomendacion}}</p>
+
+      <h5 *ngIf="ficha.color">Color</h5>
+      <p>{{ficha.color}}</p>
+
+    </div>
+    <div class="col-md-12  mt-4 p-0">
+      <button type="button" class="btn btn-sm btn-dark back d-block mx-auto float-md-left  ">
+        <a class="btn text-white " routerLink="/productos">Volver</a>
+      </button>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
