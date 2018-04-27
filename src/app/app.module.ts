@@ -34,6 +34,8 @@ import { BackendCentComponent } from './backend-cent/backend-cent.component';
 import { ContactoService } from './contacto.service';
 import { ThanksComponent } from './thanks/thanks.component';
 import { ChangeLinePipe } from './change-line.pipe';
+import { FichaComponent } from './ficha/ficha.component';
+import { FichaService } from './ficha.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { ChangeLinePipe } from './change-line.pipe';
     ItemUsoComponent,
     BackendCentComponent,
     ThanksComponent,
-    ChangeLinePipe
+    ChangeLinePipe,
+    FichaComponent
   ],
   imports: [
     HttpModule,
@@ -71,7 +74,7 @@ import { ChangeLinePipe } from './change-line.pipe';
     HttpClientModule
     // EditorModule
   ],
-  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService,ContactoService],
+  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService,ContactoService,FichaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

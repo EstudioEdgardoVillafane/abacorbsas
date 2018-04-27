@@ -17,6 +17,8 @@ import { CaracteristicasComponent } from '../caracteristicas/caracteristicas.com
 import { ItemUsoComponent } from '../item-uso/item-uso.component';
 import { BackendCentComponent } from '../backend-cent/backend-cent.component';
 import { ThanksComponent } from '../thanks/thanks.component';
+import { FichaComponent } from '../ficha/ficha.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'admin', component: AdminComponent },
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path: 'uso', component: CaracteristicasComponent },
   { path: 'uso/:nombre', component: ItemUsoComponent },
   { path: 'enviado', component: ThanksComponent},
+  { path: 'ficha/:ficha_id', component: FichaComponent},
   { path: 'admin/online',
     component: BackendCentComponent,
     children:[

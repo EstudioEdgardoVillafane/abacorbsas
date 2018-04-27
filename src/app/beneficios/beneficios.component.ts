@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Beneficios} from '../beneficios-class';
 import {BENEFICIOS} from '../mock-beneficios';
 import {BeneficioService} from '../beneficio.service';
-import { DetBeneficios } from './det-benef-class';
+import { DetBeneficios } from '../detalle-beneficios/det-benef-class';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -23,11 +23,13 @@ export class BeneficiosComponent implements OnInit {
   ngOnInit() {
    this.getFromUrl();
   }
+
   getFromUrl(): void{
     const id =+ this.route.snapshot.paramMap.get('id');
     this.benefService.getFromUrl(id)
     .subscribe(totodos => this.totodos = totodos);
   }
+
   onClick(id : number){
   
     BeneficioService.prototype.getID(id).subscribe(totodos=> this.toto = totodos)
