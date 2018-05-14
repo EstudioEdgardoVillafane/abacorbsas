@@ -11,5 +11,7 @@
   .responsive-title{
       font-size: 1.4rem!important;
   }
-
+  .contain{
+    height:unset;
+}
 }
