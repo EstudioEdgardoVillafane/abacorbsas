@@ -36,6 +36,7 @@ import { ThanksComponent } from './thanks/thanks.component';
 import { ChangeLinePipe } from './change-line.pipe';
 import { FichaComponent } from './ficha/ficha.component';
 import { FichaService } from './ficha.service';
+import { PaginadorService } from './services/paginador.service'
 
 @NgModule({
   declarations: [
@@ -74,7 +75,7 @@ import { FichaService } from './ficha.service';
     HttpClientModule
     // EditorModule
   ],
-  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService,ContactoService,FichaService],
+  providers: [ BeneficioService,BackendUsuarioService,ContentService,AdminService,ContactoService,FichaService,PaginadorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

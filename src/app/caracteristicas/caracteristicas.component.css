@@ -1,11 +1,20 @@
 .contain{
-    height: 100vh;
+    /* height: 100vh; */
 }
 .wide-art{
     border-bottom: solid 1px #4e4e4e;
 }
 
-
+.btn-color{
+    background-color: #659b01;
+}
+.paginador{
+    border: 1px #868686 solid!important;
+    padding: 8px!important;
+    background: white!important;
+    border-radius: 5px!important;
+    cursor: pointer;
+}
 /* Móviles */
 @media screen and (max-width:425px) {
   .responsive-title{
