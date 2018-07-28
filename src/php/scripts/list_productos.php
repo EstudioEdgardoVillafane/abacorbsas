@@ -5,7 +5,9 @@
 
 	$NewConnect = new Abacor();
 	
-	$sql="SELECT * FROM usos WHERE u_status = 1";	
-	$NewConnect->CreateJson($sql);
+	
+		$sql="SELECT * FROM productos WHERE p_status = 1";	
+		$NewConnect->CreateJson($sql);
+	
 
 ?>
