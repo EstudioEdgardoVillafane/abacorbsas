@@ -19,7 +19,7 @@ export class CaracteristicasComponent implements OnInit {
 
   constructor(private contentService: ContentService, private http: Http, private paginadorService:PaginadorService) { }
 
-  ListOfContent;
+  ListOfContent: any[];
   Aux;
 
   // array of all items to be paged
@@ -29,21 +29,30 @@ export class CaracteristicasComponent implements OnInit {
   pager: any = {};
 
   // paged items
-  pagedItems: any[];
+  pagedUses: any[];
 
   ngOnInit() {
-   this.Listado();
+  //  this.Listado();
+
+  this.contentService.listProduct()
+  .map((response: Response) => response.json())
+  .subscribe(data => { 
+    this.allItems = data; 
+
+     // initialize to page 1
+      this.setPage(1);
+  });
 
     // get dummy data
-    this.http.get('../../assets/json/dummy-json.json')
-    .map((response: Response) => response.json())
-    .subscribe(data => {
-        // set items to json response
-        this.allItems = data;
+    // this.http.get('../../assets/json/dummy-json.json')
+    // .map((response: Response) => response.json())
+    // .subscribe(data => {
+    //     // set items to json response
+    //     this.allItems = data;
 
-        // initialize to page 1
-        this.setPage(1);
-    });
+    //     // initialize to page 1
+    //     this.setPage(1);
+    // });
   }
 
   setPage(page: number) {
@@ -55,14 +64,14 @@ export class CaracteristicasComponent implements OnInit {
     this.pager = this.paginadorService.getPager(this.allItems.length, page);
 
     // get current page of items
-    this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    this.pagedUses = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
 }
 
-  Listado(){
-    this.contentService.CrudFunction(1,0,'','','','','')
-    .map((response) => response.json())
-    .subscribe((data) => { 
-      this.ListOfContent = data; 
-    });
-  }
+  // Listado(){
+  //   this.contentService.listProduct()
+  //   .map((response) => response.json())
+  //   .subscribe(data => { 
+  //     this.ListOfContent = data; 
+  //   });
+  // }
 }
