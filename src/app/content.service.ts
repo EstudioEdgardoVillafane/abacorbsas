@@ -15,8 +15,10 @@ export class ContentService {
   CrudFunction(FunctionPhp: number, id: number, titulo: string, subtitulo: string, descripcion: string, imagen: string,idproducto){
     return this.http.get('php/script/crud-content.php?data='+FunctionPhp+'&id='+id+'&titulo='+titulo+'&subtitulo='+subtitulo+'&descripcion='+descripcion+'&imagen='+imagen+'&idproducto='+idproducto);
   }
+
   listProduct(){
-    return this.http.get('php/scripts/list_productos.php');
+    return this.http.get('http://localhost/abacorbsas/src/php/scripts/list_productos.php');
+    
   }
 
   getJsonForID(id:number, json){

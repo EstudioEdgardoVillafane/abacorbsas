@@ -10,17 +10,11 @@
         ipsum quis feugiat vulputate. Maecenas laoreet justo neque, non porttitor sapien finibus a.</p>
     </div>
     <div class="col-sm-12">
-      <!-- <ul class="list-group">
-              <li class="list-group-item" *ngFor="let listado of ListOfContent"><a class="toto" name="toto" routerLink="/uso/{{listado.u_titulo}}"><i class="fa fa-caret-right"></i> {{listado.u_titulo | changeLine}}</a></li>
-            </ul> -->
       <div class="row">
-        <div *ngFor="let producto of pagedItems" class="col-md-2 px-3 bg-white mb-3 p-0 d-flex ">
+        <div *ngFor="let uso of pagedUses" class="col-md-2 px-3 bg-white mb-3 p-0 d-flex">
           <div class="mx-auto">
-            <img src="../../assets/img/jarron.jpeg" class="img-fluid d-flex mx-auto pt-2 pb-2" alt="">
-            <p class="mx-auto text-center text-dark break-line-custom">{{producto.name}}</p>
-            <span class="d-flex flex-column">
-              <button class="btn btn-color btn-block rounded-0 text-white butt-prod px-md-2 my-1">Ver producto</button>
-            </span>
+            <img src="./assets/img/usos/{{uso.u_imagen}}" class="img-fluid d-flex mx-auto pt-2 pb-2" alt="">
+            <p class="mx-auto text-center text-dark break-line-custom">{{uso.u_titulo}}</p>
           </div>
         </div>
       </div>
