@@ -34,7 +34,7 @@ export class CaracteristicasComponent implements OnInit {
   ngOnInit() {
   //  this.Listado();
 
-  this.contentService.listProduct()
+  this.contentService.CrudFunction(1,0,"","","","",0)
   .map((response: Response) => response.json())
   .subscribe(data => { 
     this.allItems = data; 

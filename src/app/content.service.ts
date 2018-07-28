@@ -17,7 +17,7 @@ export class ContentService {
   }
 
   listProduct(){
-    return this.http.get('http://localhost/abacorbsas/src/php/scripts/list_productos.php');
+    return this.http.get('php/scripts/list_productos.php');
     
   }
 
