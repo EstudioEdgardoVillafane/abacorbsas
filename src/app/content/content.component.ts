@@ -86,6 +86,8 @@ export class ContentComponent implements OnInit {
     location.reload();
   }
   }
+
+  
   ValidateEditForm(){
     this.titulo = document.getElementById('titulo-ed');
     this.subtitulo = document.getElementById('subtitulo-ed');
