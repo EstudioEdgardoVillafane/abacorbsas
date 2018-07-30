@@ -44,6 +44,7 @@ export class ContentComponent implements OnInit {
   BooleanToAlertSubTitulo = false;
   BooleanToAlertParrafo = false;
   BooleanToValidate = false;
+  alertRightEdited=false;
 
   /** I am defining the service. */
   
@@ -79,11 +80,14 @@ export class ContentComponent implements OnInit {
    this.idproducto.value
    )
     .subscribe((data) => { 
-      console.log(data);
-      this.Aux = data;
+     this.alertRightEdited=true;
+          this.ListContent();
+          setTimeout(() => {
+          this.Return();
+          }, 1000);
     });
 
-    location.reload();
+    //location.reload();
   }
   }
 
@@ -136,6 +140,7 @@ export class ContentComponent implements OnInit {
     this.BooleanToAlertParrafo = false;
     this.ListContent();
     this.boolPrueb=false;
+    this.alertRightEdited=false;
   }
   /** This fucntion is calling the database to do a list. CrudFunction is a function of service. He gets 6 parameter. */
   ListContent(){

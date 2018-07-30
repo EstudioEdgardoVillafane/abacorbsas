@@ -144,6 +144,7 @@
               <button class="btn btn-lg btn-danger ml-2" (click)="ReturnToTheTableUsers()">Volver</button>
               <button class="btn btn-lg btn-info ml-3" (click)="Edit(edit_usuarios.u_id)">Editar</button>
             </div>
+              <div *ngIf="alertRightEdited" class="mt-3 alert alert-success fade show">¡Datos correctamente actualizados!</div>
           </div>
         </div>
 
@@ -163,6 +164,7 @@
           <button class="btn btn-md btn-info pull-right ml-1" (click)="ShowStoreForm()">Agregar</button>
           <button class="btn btn-md btn-danger pull-right ml-1" (click)="Delete()">Eliminar</button>
         </div>
+       
       </div>
 
       <table class="table table-bordered mt-3" width="100%">
