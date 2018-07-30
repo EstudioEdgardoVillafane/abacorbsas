@@ -21,6 +21,7 @@ nav .navbar-nav li:hover:not(:last-child){
 .h-text{
     height: 25%;
     font-size: .85rem;
+    margin-left:3.5rem;
 }
 nav .navbar-nav ul li a:hover {
     color: #fff;

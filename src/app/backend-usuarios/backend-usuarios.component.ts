@@ -36,9 +36,8 @@ export class BackendUsuariosComponent implements OnInit {
   AlertPassword = false;
   AlertConfirmPassword = false;
   AlertNewPassword = false;
-
-
   EditPasswordVar = false;
+  alertRightEdited=false;
   
   var;
   CheckAcumulador = new Array();
@@ -49,7 +48,7 @@ export class BackendUsuariosComponent implements OnInit {
   edit;
   edit_usuarios;
   listado;
-  constructor( private BackendUsuarioService : BackendUsuarioService ) { }
+  constructor( private BackendUsuarioService : BackendUsuarioService) { }
 
   ngOnInit() {
     if(localStorage.getItem("keyTwo") != "1"){
@@ -85,6 +84,7 @@ export class BackendUsuariosComponent implements OnInit {
     this.AlertMail = false;
     this.AlertNewPassword = false;
     this.AlertPassword = false;
+    this.alertRightEdited=false;
   }
 
   Listar(){
@@ -123,8 +123,12 @@ export class BackendUsuariosComponent implements OnInit {
       if(this.u_usuario.value != "" && this.u_mail.value != ""){
         this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,"0")
         .subscribe((data)=>{ this.var=data;});
-         // this.ListBackendUsers();
-          location.reload();
+          this.alertRightEdited=true;
+          this.Listar();
+          setTimeout(() => {
+          this.ReturnToTheTableUsers();
+          }, 1000);
+
         }
 //when press the button " cambiar contrasena" in the edit form
     }else if(this.EditPasswordVar == true){
