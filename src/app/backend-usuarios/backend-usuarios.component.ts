@@ -87,7 +87,6 @@ export class BackendUsuariosComponent implements OnInit {
     this.AlertPassword = false;
   }
 
-
   Listar(){
     this.BackendUsuarioService.validateUser().subscribe((data) => {
       console.log(data.text());
@@ -122,10 +121,10 @@ export class BackendUsuariosComponent implements OnInit {
         this.AlertMail = false;
       }
       if(this.u_usuario.value != "" && this.u_mail.value != ""){
-        this.BackendUsuarioService.Conect(7,u_id,this.u_usuario.value,this.u_mail.value,"0")
+        this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,"0")
         .subscribe((data)=>{ this.var=data;});
-            // this.ListBackendUsers();
-          //location.reload();
+         // this.ListBackendUsers();
+          location.reload();
         }
 //when press the button " cambiar contrasena" in the edit form
     }else if(this.EditPasswordVar == true){
@@ -163,7 +162,7 @@ export class BackendUsuariosComponent implements OnInit {
           }else{
               this.BackendUsuarioService.Conect(4,u_id,this.u_usuario.value,this.u_mail.value,this.u_contrasena.value)
               .subscribe((data)=>{ this.var=data;});
-   //           location.reload();
+             // location.reload();
            
           }  
         });
