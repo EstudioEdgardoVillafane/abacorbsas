@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+
+nav{
+    background: linear-gradient(135deg, #659b01 0%,#09abbc 21%,#659b01 21%,#659b01 99%);
+    height: 75px;
+    padding: 0px!important;
+}
+nav > div > a, nav > div {
+    height: 100%;
+}
+nav > div > a > img{
+    max-height: 100%;
+}
+h1{
+    font-size: 47px;
+}
+.firstSeccion{
+    background-color:#33ff0024;
+    min-height: 87.7vh;
+}
+.firstSeccion, .secondSeccion{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.content-img{
+    padding-top: 30px;
+}
+.content-img > div {
+    height: 150px;
+}
+.content-img > div > img{
+    max-width: 100%;
+    max-height: 100%;
+}
+button{
+    font-size: 27px;
+    margin-top: 50px;
+    color: #ffffff;
+    background-color: #007eff;
+    border-color: #0b7cfb;
+    box-shadow: 1px 1px 6px black;
+}
+button:hover{
+    background-color: #6de551;
+    border-color: #929292;
+    color: white;
+    text-shadow: 1px 1px 1px grey;
+}
+.footer{
+    position: fixed;
+    top: 92vh;
+    background: #00ff00b8;
+    height: 60px;
+    width: 100%;
+}
+.text-footer{
+    font-family: 'Bitter', serif;
+    text-shadow: 0.03em 0.03em 0.03em black;
+    color: white;
+    margin-right: 30px;
+    font-size: 1.75rem;;
+    margin-top: 4px;
+}
+span{
+    font-size:16px;
+}
+@media screen and (max-width:768px) {
+    .footer{
+        display:none;
+    }
+}

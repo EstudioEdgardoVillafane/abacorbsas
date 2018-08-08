@@ -1,0 +1,36 @@
+nav{
+    background: linear-gradient(135deg, #659b01 0%,#09abbc 21%,#659b01 21%,#659b01 99%);
+    height: 75px;
+    padding: 0px!important;
+}
+nav > div > a, nav > div {
+    height: 100%;
+}
+nav > div > a > img{
+    max-height: 100%;
+}
+.info{
+    font-size:15px;
+}
+.firstSeccion, .secondSeccion{
+    padding-top: 25px;
+}
+.firstSeccion{
+    background-color:#33ff0024;
+    min-height: 87.7vh;
+}
+.contact{
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 1px 1px 7px #80808087;
+}
+.pt-15{
+    padding-top: 15px;
+}
+form{
+    padding-bottom: 15px;
+}
+button{
+    margin-bottom: 15px;
+    width: 150px;
+}

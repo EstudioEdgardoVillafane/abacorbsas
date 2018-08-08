@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HomelpComponent } from '../lp/homelp/homelp.component';
 import { HomeComponent } from '../home/home.component';
 import { ProductosComponent } from '../productos/productos.component';
 import { DetalleProductosComponent } from '../detalle-productos/detalle-productos.component';
@@ -18,6 +19,7 @@ import { ItemUsoComponent } from '../item-uso/item-uso.component';
 import { BackendCentComponent } from '../backend-cent/backend-cent.component';
 import { ThanksComponent } from '../thanks/thanks.component';
 import { FichaComponent } from '../ficha/ficha.component';
+import { ContactComponent } from '../lp/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: 'uso/:nombre', component: ItemUsoComponent },
   { path: 'enviado', component: ThanksComponent},
   { path: 'ficha/:ficha_id', component: FichaComponent},
+  { path: 'lp/:abd', component: HomelpComponent },
+  { path: 'lp-contacto', component: ContactComponent},
   { path: 'admin/online',
     component: BackendCentComponent,
     children:[
@@ -43,7 +47,6 @@ const routes: Routes = [
     ]
   }
 ];
-
 @NgModule({
   imports: [
     CommonModule,

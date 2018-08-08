@@ -36,7 +36,10 @@ import { ThanksComponent } from './thanks/thanks.component';
 import { ChangeLinePipe } from './change-line.pipe';
 import { FichaComponent } from './ficha/ficha.component';
 import { FichaService } from './ficha.service';
-import { PaginadorService } from './services/paginador.service'
+import { PaginadorService } from './services/paginador.service';
+import { ContactComponent } from './lp/contact/contact.component';
+import { HomelpComponent } from './lp/homelp/homelp.component';
+import { UpperCaracter } from './pipes/upper-first-caracter.pipe'
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { PaginadorService } from './services/paginador.service'
     BackendCentComponent,
     ThanksComponent,
     ChangeLinePipe,
-    FichaComponent
+    FichaComponent,
+    ContactComponent,
+    HomelpComponent,
+    UpperCaracter
   ],
   imports: [
     HttpModule,
