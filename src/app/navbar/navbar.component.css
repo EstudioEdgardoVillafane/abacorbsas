@@ -1,4 +1,6 @@
-
+.full-tam{
+    height: 100%;
+}
 nav{
     background: linear-gradient(135deg, #659b01 0%,#09abbc 21%,#659b01 21%,#659b01 99%);
     height: 75px;
